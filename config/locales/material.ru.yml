@@ -6,7 +6,7 @@ ru:
         other: 'Материалы'
         few: 'Материалы'
         many: 'Материалы' 
-   attributes:
+    attributes:
       material:
         id: 'Номер'
         name: 'Название'
