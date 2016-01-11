@@ -3,7 +3,7 @@ app_name = 'delizia'
 working_directory "/var/www/apps/#{app_name}/current"
 
 listen "/var/www/apps/#{app_name}/socket/.unicorn.sock", :backlog => 64
-listen 8088, :tcp_nopush => true
+listen 8089, :tcp_nopush => true
 timeout 30
 
 pid "/var/www/apps/#{app_name}/run/unicorn.pid"
