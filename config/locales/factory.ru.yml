@@ -4,6 +4,8 @@ ru:
       factory:
         one: 'фабрику'
         other: 'Фабрики'
+        few: 'Фабрики'
+        many: 'Фабрики'
     attributes:
       factory:
         id: 'Номер'

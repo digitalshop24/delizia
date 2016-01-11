@@ -4,6 +4,8 @@ ru:
       type:
         one: 'тип'
         other: 'Типы'
+        many: 'Типы'
+        few: "Типы"
     attributes:
       type:
         id: 'Номер'

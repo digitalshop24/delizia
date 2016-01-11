@@ -4,7 +4,9 @@ ru:
       material:
         one: 'материал'
         other: 'Материалы'
-    attributes:
+        few: 'Материалы'
+        many: 'Материалы' 
+   attributes:
       material:
         id: 'Номер'
         name: 'Название'

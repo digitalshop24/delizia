@@ -4,7 +4,9 @@ ru:
       tile:
         one: 'плитку'
         other: 'Плитки'
-    attributes:
+        few: 'Плитки'
+        many: 'Плитки'  
+  attributes:
       tile:
         id: 'Номер'
         name: 'Название'

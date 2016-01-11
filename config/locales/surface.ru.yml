@@ -2,9 +2,11 @@ ru:
   activerecord:
     models:
       surface:
-        one: 'поврехность'
-        other: 'Поверхности'
-    attributes:
+        one: 'поверхность'
+        many: 'Поверхности'
+        few: "Поверхности"
+        other: "Поверхности"    
+attributes:
       surface:
         id: 'Номер'
         name: 'Название'

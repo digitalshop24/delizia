@@ -4,6 +4,8 @@ ru:
       collection:
         one: 'коллекцию'
         other: 'Коллекции'
+        few: 'Коллекции'
+        many: 'Коллекции'
     attributes:
       collection:
         id: 'Номер'

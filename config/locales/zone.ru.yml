@@ -4,7 +4,9 @@ ru:
       zone:
         one: 'зону применения'
         other: 'Зоны'
-    attributes:
+        few: 'Зоны'
+        many: 'Зоны'  
+  attributes:
       zone:
         id: 'Номер'
         name: 'Название'
