@@ -1,4 +1,4 @@
-app_name = 'appisode'
+app_name = 'delizia'
 
 set :repo_url, "git@github.com:digitalshop24/#{app_name}.git"
 set :application, app_name
