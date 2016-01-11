@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      collection:
+        one: 'коллекцию'
+        other: 'Коллекции'
+    attributes:
+      collection:
+        id: 'Номер'
+        name: 'Название'
+        description: 'Описание'
+        new: 'Новинка'
+        image: 'Изображениe'
+        factory: 'Фабрика'
+        type: 'Тип'
+        zone: 'Зона применения'
+        material: 'Материал' 

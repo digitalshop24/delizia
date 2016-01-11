@@ -18,7 +18,7 @@ index do
   actions
 end
 form do |f|
-	f.inputs "Tile Details" do
+	f.inputs "Подробно" do
         f.input :name
 	f.input :width
         f.input :length

@@ -19,7 +19,7 @@ index do
   actions
 end
 form do |f|
-	f.inputs "Collection Details" do
+	f.inputs "Подробно" do
         f.input :name
 	f.input :description
         f.input :factory
@@ -27,6 +27,7 @@ form do |f|
 	f.input :zone
 	f.input :material
 	f.input :image, :as => :file
+  f.input :new
 	end
 f.actions
 end

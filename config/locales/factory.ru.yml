@@ -1,0 +1,12 @@
+ru:
+  activerecord:
+    models:
+      factory:
+        one: 'фабрику'
+        other: 'Фабрики'
+    attributes:
+      factory:
+        id: 'Номер'
+        name: 'Название'
+        description: 'Описание'
+        logo: 'Изображениe'

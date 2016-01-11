@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      material:
+        one: 'материал'
+        other: 'Материалы'
+    attributes:
+      material:
+        id: 'Номер'
+        name: 'Название'

@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      type:
+        one: 'тип'
+        other: 'Типы'
+    attributes:
+      type:
+        id: 'Номер'
+        name: 'Название'

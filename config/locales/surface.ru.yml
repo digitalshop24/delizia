@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      surface:
+        one: 'поврехность'
+        other: 'Поверхности'
+    attributes:
+      surface:
+        id: 'Номер'
+        name: 'Название'
+        tiles: 'Плитки'
+
+

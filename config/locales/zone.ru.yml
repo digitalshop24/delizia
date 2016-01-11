@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      zone:
+        one: 'зону применения'
+        other: 'Зоны'
+    attributes:
+      zone:
+        id: 'Номер'
+        name: 'Название'

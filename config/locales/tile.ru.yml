@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      tile:
+        one: 'плитку'
+        other: 'Плитки'
+    attributes:
+      tile:
+        id: 'Номер'
+        name: 'Название'
+        image: 'Изображениe'
+        surface: 'Поверхность'
+        collection: 'Коллекция'
+        width: 'Ширина'
+        length: 'Длина'
+        price: 'Цена'
+

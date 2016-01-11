@@ -17,7 +17,7 @@ index do
   actions
 end
 form do |f|
-	f.inputs "Factory Details" do
+	f.inputs "Подробно" do
         f.input :name
 	f.input :description
 	f.input :logo, :as => :file
