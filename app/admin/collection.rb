@@ -9,7 +9,7 @@ permit_params :factory_id, :type_id, :zone_id, :material_id, :name, :image, :des
 index do
   column :image  do |e|
     if e.image_file_name
-    image_tag(e.image.url)
+    image_tag(e.image.url(:thumb))
     end
   end
   column :name
