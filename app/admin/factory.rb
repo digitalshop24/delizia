@@ -36,6 +36,7 @@ end
 show do |collection|
 	    attributes_table do
 				row :name
+				row :description
 			end
 end
 
