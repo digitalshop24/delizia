@@ -1,6 +1,5 @@
 class ImagesController < ApplicationController
 	  before_action :set_image, only: [:destroy, :preview]
-		  load_and_authorize_resource
 
 			  def destroy
 					    respond_to do |format|
