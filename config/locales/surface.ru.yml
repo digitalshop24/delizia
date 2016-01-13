@@ -6,7 +6,7 @@ ru:
         many: 'Поверхности'
         few: "Поверхности"
         other: "Поверхности"    
-attributes:
+    attributes:
       surface:
         id: 'Номер'
         name: 'Название'

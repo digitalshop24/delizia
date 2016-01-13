@@ -5,7 +5,11 @@ ActiveAdmin.register Collection do
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
 permit_params  :new, :factory_id, :type_id, :zone_id, :material_id, :name, :description, images: []
-
+filter :name
+filter :factory
+filter :type
+filter :zone
+filter :new
 index do
 
   column :name

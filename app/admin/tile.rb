@@ -3,6 +3,12 @@ menu :priority => 5
 	# See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
+filter :name
+filter :width
+filter :length
+filter :price
+filter :surface
+filter :collection
 permit_params :name, :width, :length, :image, :price, :surface_id, :collection_id
 index do
   column :image  do |e|
@@ -30,7 +36,16 @@ form do |f|
 	end
 f.actions
 end
-#
+show do |collection|
+	    attributes_table do
+				row :name
+				row :collection
+				row :surface
+				row :width
+				row :length
+				row :price
+			end
+end
 # or
 #
 # permit_params do

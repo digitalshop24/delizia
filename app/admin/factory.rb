@@ -5,6 +5,7 @@ menu :priority => 4
 #
 # permit_params :list, :of, :attributes, :on, :model
 #
+filter :name
 permit_params :name, :logo, :description
 index do
   column :logo  do |e|
@@ -32,5 +33,10 @@ end
 #   permitted
 # end
 
+show do |collection|
+	    attributes_table do
+				row :name
+			end
+end
 
 end

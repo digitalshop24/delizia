@@ -6,9 +6,8 @@ ru:
         other: 'Плитки'
         few: 'Плитки'
         many: 'Плитки'  
-  attributes:
+    attributes:
       tile:
-        id: 'Номер'
         name: 'Название'
         image: 'Изображениe'
         surface: 'Поверхность'

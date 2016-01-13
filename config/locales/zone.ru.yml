@@ -6,7 +6,7 @@ ru:
         other: 'Зоны'
         few: 'Зоны'
         many: 'Зоны'  
-  attributes:
+    attributes:
       zone:
         id: 'Номер'
         name: 'Название'

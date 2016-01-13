@@ -10,3 +10,4 @@ ru:
       type:
         id: 'Номер'
         name: 'Название'
+        collections: 'Коллекции'
