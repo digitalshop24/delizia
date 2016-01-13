@@ -6,9 +6,9 @@ class CreateCollections < ActiveRecord::Migration
       t.belongs_to :zone, index: true
       t.belongs_to :material, index: true
       t.string :name
-      t.attachment :image
       t.text :description
-      t.boolean :new
+      t.attachment :image
+			t.boolean :new
       t.timestamps null: false
     end
   end

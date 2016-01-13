@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # The priority is based upon order of creation: first created -> highest priority.
+delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
+  get 'admin/images/:id/:object_type/:object_id', to: 'images#preview', as: :preview_image
+	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

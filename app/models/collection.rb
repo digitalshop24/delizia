@@ -4,8 +4,18 @@ class Collection < ActiveRecord::Base
   belongs_to :type
   belongs_to :zone
   belongs_to :material
-  has_attached_file :image, :styles => { :medium => "238x238>", 
-	                                     :thumb => "100x100>"
-                                   }
-  validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
+
+belongs_to :image
+  include Galleryable
+	  has_one :gallery, as: :galleryable, dependent: :destroy
+		  has_attached_file :image,
+				    styles: { thumb: "200x200>", medium: "500x500>", big: "1000x1000>" }
+			  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+					  after_save :set_preview
+
+				def set_preview
+					    unless image_file_name
+								      images.first.as_preview(self) if images
+											    end
+							  end
 end

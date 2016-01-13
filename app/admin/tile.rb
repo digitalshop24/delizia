@@ -7,7 +7,7 @@ permit_params :name, :width, :length, :image, :price, :surface_id, :collection_i
 index do
   column :image  do |e|
     if e.image_file_name
-      image_tag(e.image.url)
+      image_tag(e.image(:thumb))
     end
   end
   column :name

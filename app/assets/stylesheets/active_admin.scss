@@ -15,3 +15,14 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+li div.inline-hints {
+	  margin: 0.5em 0 0 20%;
+  }
+
+  div.image-view {
+	    display:inline-block;
+    }
+
+    div.image-view.preview {
+	      background-color: #B5BDD3;
+      }
