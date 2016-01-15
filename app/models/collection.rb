@@ -1,8 +1,8 @@
 class Collection < ActiveRecord::Base
   belongs_to :factory
   has_many :tiles
-  belongs_to :type
-  belongs_to :zone
+  has_and_belongs_to_many :type
+	has_and_belongs_to_many :zone
   belongs_to :material
 
 belongs_to :image

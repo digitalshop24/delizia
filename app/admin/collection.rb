@@ -30,8 +30,8 @@ form do |f|
 			end
 		f.input :description
 		f.input :factory
-		f.input :type
-		f.input :zone
+		f.input :type, as: :check_boxes
+		f.input :zone, as: :check_boxes
 		f.input :material
 		f.input :new
 	end

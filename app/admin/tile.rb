@@ -3,13 +3,14 @@ menu :priority => 5
 	# See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
+filter :code
 filter :name
 filter :width
 filter :length
 filter :price
 filter :surface
 filter :collection
-permit_params :name, :width, :length, :image, :price, :surface_id, :collection_id
+permit_params :code, :name, :width, :length, :image, :price, :surface_id, :collection_id
 index do
   column :image  do |e|
     if e.image_file_name
@@ -22,6 +23,7 @@ index do
   column :surface
   column :collection
   column :price
+	column :code
   actions
 end
 form do |f|
@@ -31,8 +33,10 @@ form do |f|
         f.input :length
 	f.input :image, :as => :file
 	f.input :price
+	f.input :amount
 	f.input :collection
 	f.input :surface
+	f.input :code
 	end
 f.actions
 end
@@ -44,6 +48,7 @@ show do |collection|
 				row :width
 				row :length
 				row :price
+				row :code
 			end
 end
 # or

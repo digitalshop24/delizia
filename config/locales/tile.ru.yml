@@ -14,5 +14,6 @@ ru:
         collection: 'Коллекция'
         width: 'Ширина'
         length: 'Длина'
-        price: 'Цена'
-
+        price: 'Цена в евро'
+        amount: 'Количество'
+        code: 'Код'

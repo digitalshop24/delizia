@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113124717) do
+ActiveRecord::Schema.define(version: 20160115131909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,14 @@ ActiveRecord::Schema.define(version: 20160113124717) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
+  create_table "amounts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "collections", force: :cascade do |t|
     t.integer  "factory_id"
-    t.integer  "type_id"
-    t.integer  "zone_id"
     t.integer  "material_id"
     t.string   "name"
     t.text     "description"
@@ -67,8 +71,22 @@ ActiveRecord::Schema.define(version: 20160113124717) do
 
   add_index "collections", ["factory_id"], name: "index_collections_on_factory_id", using: :btree
   add_index "collections", ["material_id"], name: "index_collections_on_material_id", using: :btree
-  add_index "collections", ["type_id"], name: "index_collections_on_type_id", using: :btree
-  add_index "collections", ["zone_id"], name: "index_collections_on_zone_id", using: :btree
+
+  create_table "collections_types", force: :cascade do |t|
+    t.integer "type_id"
+    t.integer "collection_id"
+  end
+
+  add_index "collections_types", ["collection_id"], name: "index_collections_types_on_collection_id", using: :btree
+  add_index "collections_types", ["type_id"], name: "index_collections_types_on_type_id", using: :btree
+
+  create_table "collections_zones", force: :cascade do |t|
+    t.integer "zone_id"
+    t.integer "collection_id"
+  end
+
+  add_index "collections_zones", ["collection_id"], name: "index_collections_zones_on_collection_id", using: :btree
+  add_index "collections_zones", ["zone_id"], name: "index_collections_zones_on_zone_id", using: :btree
 
   create_table "factories", force: :cascade do |t|
     t.string   "name"
@@ -115,6 +133,7 @@ ActiveRecord::Schema.define(version: 20160113124717) do
   end
 
   create_table "tiles", force: :cascade do |t|
+    t.integer  "amount_id"
     t.integer  "collection_id"
     t.integer  "surface_id"
     t.string   "name"
@@ -123,12 +142,14 @@ ActiveRecord::Schema.define(version: 20160113124717) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "width"
+    t.string   "code"
     t.integer  "length"
     t.integer  "price"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
+  add_index "tiles", ["amount_id"], name: "index_tiles_on_amount_id", using: :btree
   add_index "tiles", ["collection_id"], name: "index_tiles_on_collection_id", using: :btree
   add_index "tiles", ["surface_id"], name: "index_tiles_on_surface_id", using: :btree
 
