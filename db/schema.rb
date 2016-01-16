@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160115131909) do
+ActiveRecord::Schema.define(version: 20160116095940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,6 +147,8 @@ ActiveRecord::Schema.define(version: 20160115131909) do
     t.integer  "price"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "single_price"
+    t.integer  "compose_price"
   end
 
   add_index "tiles", ["amount_id"], name: "index_tiles_on_amount_id", using: :btree

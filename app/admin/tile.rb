@@ -7,10 +7,12 @@ filter :code
 filter :name
 filter :width
 filter :length
+filter :single_price
 filter :price
+filter :compose_price
 filter :surface
 filter :collection
-permit_params :code, :name, :width, :length, :image, :price, :surface_id, :collection_id
+permit_params :code, :single_price, :compose_price, :name, :width, :length, :image, :price, :surface_id, :collection_id
 index do
   column :image  do |e|
     if e.image_file_name
@@ -23,6 +25,8 @@ index do
   column :surface
   column :collection
   column :price
+	column :single_price
+	column :compose_price
 	column :code
   actions
 end
@@ -33,7 +37,8 @@ form do |f|
         f.input :length
 	f.input :image, :as => :file
 	f.input :price
-	f.input :amount
+	f.input :single_price
+	f.input :compose_price
 	f.input :collection
 	f.input :surface
 	f.input :code
@@ -48,6 +53,8 @@ show do |collection|
 				row :width
 				row :length
 				row :price
+				row :single_price
+				row :compose_price
 				row :code
 			end
 end

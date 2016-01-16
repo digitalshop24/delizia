@@ -15,7 +15,9 @@ index do
   column :name
   column :description
   column :factory
-  column :type
+  column :type do |collection|
+		link_to collection.type.name	
+	end
   column :zone
   actions
 end
