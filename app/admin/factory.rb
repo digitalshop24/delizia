@@ -11,7 +11,7 @@ index do
 	selectable_column
 	column :logo  do |e|
     if e.logo_file_name
-    image_tag(e.logo(:thumb))
+    image_tag(e.iogo.url(:thumb))
     end
   end
   column :name
