@@ -14,7 +14,8 @@ filter :surface
 filter :collection
 permit_params :code, :single_price, :compose_price, :name, :width, :length, :image, :price, :surface_id, :collection_id
 index do
-  column :image  do |e|
+	selectable_column
+	column :image  do |e|
     if e.image_file_name
       image_tag(e.image(:thumb))
     end

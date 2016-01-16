@@ -11,7 +11,7 @@ filter :type
 filter :zone
 filter :new
 index do
-
+	selectable_column
   column :name
   column :description
   column :factory

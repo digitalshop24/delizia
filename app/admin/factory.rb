@@ -8,7 +8,8 @@ menu :priority => 4
 filter :name
 permit_params :name, :logo, :description
 index do
-  column :logo  do |e|
+	selectable_column
+	column :logo  do |e|
     if e.logo_file_name
     image_tag(e.logo(:thumb))
     end
