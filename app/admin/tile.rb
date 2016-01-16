@@ -17,7 +17,7 @@ index do
 	selectable_column
 	column :image  do |e|
     if e.image_file_name
-      image_tag(e.image(:thumb))
+      image_tag(e.image.url(:thumb))
     end
   end
   column :name
