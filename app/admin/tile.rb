@@ -16,9 +16,7 @@ permit_params :code, :single_price, :compose_price, :name, :width, :length, :ima
 index do
 	selectable_column
 	column :image  do |e|
-    if e.image_file_name
       image_tag(e.image.url(:thumb))
-    end
   end
   column :name
   column :width
