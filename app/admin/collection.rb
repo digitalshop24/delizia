@@ -4,7 +4,7 @@ ActiveAdmin.register Collection do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params  :new, :factory_id, :type_id, :zone_id, :material_id, :name, :description, images: []
+permit_params  :new, :factory_id, :name, :description, images: [], type_ids: [], zone_ids: [], material_ids: []
 filter :name
 filter :factory
 filter :type
@@ -31,7 +31,7 @@ form do |f|
 			end
 		f.input :description
 		f.input :factory
-		f.input :types, as: :check_boxes
+		f.input :types, as: :check_boxes , collection: Type.all, member_label: Proc.new { |pr| "#{pr.name}" } 
 		f.input :zones, as: :check_boxes
 		f.input :materials, as: :check_boxes
 		f.input :new
@@ -47,13 +47,27 @@ show do |collection|
 					render(partial: 'images/images_with_preview', locals: { object: collection, page: 'show' } )
 	      end
 				row :type do |c|
-					binding.pry
-					link_to c.types.name
+					c.types.each do |type|
+						div do
+							link_to type.name, admin_type_path(type.id)
+						end
+					end
 				end
 				row :zone do |c|
-					link_to c.zones.name
+					c.zones.each do |zone|
+						div do
+							link_to zone.name, admin_zone_path(zone.id)
+						end
+					end
 				end
-				row :material	
+				row :material do |c|	
+					c.materials.each do |material|
+						div do
+							link_to material.name, admin_material_path(material.id)
+						end
+					end
+				end	
+				
 			end
 			  end
 #
