@@ -15,8 +15,7 @@ index do
   column :name
   column :description
   column :factory
-  column :type do |collection|
-		link_to collection.type.name	
+  column :type do |collecton|
 	end
   column :zone
   actions
@@ -32,9 +31,9 @@ form do |f|
 			end
 		f.input :description
 		f.input :factory
-		f.input :type, as: :check_boxes
-		f.input :zone, as: :check_boxes
-		f.input :material
+		f.input :types, as: :check_boxes
+		f.input :zones, as: :check_boxes
+		f.input :materials, as: :check_boxes
 		f.input :new
 	end
 f.actions
@@ -46,7 +45,15 @@ show do |collection|
 	      row :new
 	      row :images do
 					render(partial: 'images/images_with_preview', locals: { object: collection, page: 'show' } )
-	      end	
+	      end
+				row :type do |c|
+					binding.pry
+					link_to c.types.name
+				end
+				row :zone do |c|
+					link_to c.zones.name
+				end
+				row :material	
 			end
 			  end
 #

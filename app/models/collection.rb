@@ -1,9 +1,9 @@
 class Collection < ActiveRecord::Base
   belongs_to :factory
   has_many :tiles
-  has_and_belongs_to_many :type
-	has_and_belongs_to_many :zone
-  belongs_to :material
+  has_and_belongs_to_many :types
+	has_and_belongs_to_many :zones
+  has_and_belongs_to_many :materials
 
 belongs_to :image
   include Galleryable

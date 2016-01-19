@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118101551) do
+ActiveRecord::Schema.define(version: 20160119115112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20160118101551) do
 
   create_table "collections", force: :cascade do |t|
     t.integer  "factory_id"
-    t.integer  "material_id"
     t.string   "name"
     t.text     "description"
     t.string   "image_file_name"
@@ -70,7 +69,14 @@ ActiveRecord::Schema.define(version: 20160118101551) do
   end
 
   add_index "collections", ["factory_id"], name: "index_collections_on_factory_id", using: :btree
-  add_index "collections", ["material_id"], name: "index_collections_on_material_id", using: :btree
+
+  create_table "collections_materials", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "material_id"
+  end
+
+  add_index "collections_materials", ["collection_id"], name: "index_collections_materials_on_collection_id", using: :btree
+  add_index "collections_materials", ["material_id"], name: "index_collections_materials_on_material_id", using: :btree
 
   create_table "collections_types", force: :cascade do |t|
     t.integer "type_id"
