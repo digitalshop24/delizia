@@ -14,9 +14,9 @@
 							<p>Поверхность: </p>
 							<p class="value"><%=g.surface.name if g.surface%></p>
 							<p>Цена: </p>
-							<p class="value"><%=g.price%> м2</p>
-							<p class="value"><%=g.compose_price%> композиция</p>
-							<p class="value"><%=g.single_price%> шт.</p>
+							<p class="value"><%=(g.price.to_i*(@course.to_i)).to_s%> м2</p>
+							<p class="value"><%=(g.compose_price.to_i*@course.to_i).to_s%> композиция</p>
+							<p class="value"><%=(g.single_price.to_i*@course.to_i).to_s%> шт.</p>
 						</div>
 					</div>
 					</div>

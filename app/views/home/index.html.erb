@@ -91,23 +91,18 @@
 		<section class="listCat text-center">
 			<header><h1>Новинки каталога</h1></header>
 			<div class="row">
+		          <% @collections.each do |g| %>	
 				<div class="col-sm-4 col-xs-12">
-					<img src="<%= asset_path "cat.jpg" %>" alt="" class="img-responsive" />
-					<h3>VIVA GOTHA</h3>
-					<a href="#" class="btn">Подробнее</a>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<img src="<%= asset_path "cat.jpg" %>" alt="" class="img-responsive" />
-					<h3>VIVA GOTHA</h3>
-					<a href="#" class="btn">Подробнее</a>
-				</div>
-				<div class="col-sm-4 col-xs-12">
-					<img src="<%= asset_path "cat.jpg" %>" alt="" class="img-responsive" />
-					<h3>VIVA GOTHA</h3>
-					<a href="#" class="btn">Подробнее</a>
-				</div>
+				<% if g.images %>
+				  <%= image_tag(g.images.first.image.url(:big), :class => "img-responsive center-block") %>
+				<%else%>	
+				  <img src="tmp/cat.jpg" alt="" class="img-responsive center-block" />
+				<%end%>
+				<span><%= link_to g.name, catalog_path(g) %></span>
 			</div>
-			<p class="link"><a href="#">Перейти к каталогу</a></p>
+		<%end%>
+			</div>
+			<p class="link"><%=link_to "Пеерейти к каталогу", "/catalog"%></p>
 		</section>
 		<!-- =/listCat -->		
 	</div>
