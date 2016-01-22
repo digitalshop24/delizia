@@ -64,3 +64,21 @@ $(document).ready(function () {
     });
 });
 
+function func() {
+var array = {
+width: $('#slider2').rangeSlider("values"),
+length: $('#slider1').rangeSlider("values"),
+type: $('#type option:selected').text(),
+zone: $('#appointment option:selected').text(),
+factory: $('#producer option:selected').text()
+}
+
+$.ajax({
+	        url : "/catalog",
+	        type : "get",
+beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+	data : array
+   
+});
+
+}
