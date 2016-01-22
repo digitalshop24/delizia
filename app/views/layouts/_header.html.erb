@@ -1,0 +1,44 @@
+<header class="header">
+		<div class="container">
+			<div class="row">
+				<div class="logo col-md-3 col-sm-3 col-xs-12">
+					<a href="/" title=""><img src="<%= asset_path "logo.png" %>" alt="Delizia - салон керамической плитки" /></a>
+				</div>
+				<div class="contacts text-center col-md-4 col-sm-offset-1 col-sm-4 col-xs-12">
+					<p>пр. Дзержинского, д.11, пом. 738</p>
+					<p>09 : 00 - 21 : 00 ПН. - ВС.</p>
+			  </div>
+				<div class="phones col-md-2 col-md-offset-1 col-sm-4 col-xs-12 text-right">
+					<p><a href="tel:+375172788866" title=""><span>+375 (17)</span> 278 88 66</a></p>
+					<p><a href="tel:+375296788866" title=""><span>+375 (29)</span> 678 88 66</a></p>
+			  </div>
+		  </div>
+		</div>
+		<div class="line"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-11 col-xs-12">
+					<nav class="navbar navbar-default">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+								<span class="sr-only">Навигация</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="navbar-collapse-1">
+							<ul>
+								<li><%=link_to "Каталог", "/catalog"%></li>
+								<li><%=link_to "О компании", "/about"%></li>
+								<li><%=link_to "Оплата и доставка", "/payment"%></li>
+								<li><%=link_to "Фабрики", "/factory"%></li>
+								<li><%=link_to "Акции", "/news"%></li>
+								<li><%=link_to "Контакты", "/contacts"%></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>

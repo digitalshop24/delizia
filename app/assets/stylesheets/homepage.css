@@ -1,0 +1,146 @@
+#foo1 .owl-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#foo1 .owl-controls {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  width: 1140px;
+  margin-left: -570px;
+}
+.advantages {
+  margin-top: 70px;
+  margin-bottom: 80px;
+  color: ;
+}
+.advantages .circle {
+  border: 4px solid ;
+  height: 100px;
+  margin-bottom: 21px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 26px;
+  position: relative;
+  width: 100px;
+}
+.advantages .circle img {
+  vertical-align: top;
+}
+.advantages .circle:after {
+  border-bottom: 1px solid ;
+  bottom: -18px;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  width: 100px;
+}
+.actions .item h1 {
+  margin-top: -0.5rem;
+}
+.actions .item .text {
+  padding-top: 2rem;
+}
+.actions .item .link {
+  padding-top: 2.4rem;
+  text-align: right;
+}
+.actions .item .link a:hover {
+  color: ;
+}
+.actions_home .item {
+  margin: 7rem 0;
+}
+.actions_home .item:first-child {
+  margin-top: 2rem;
+}
+.actions_home .item:last-child {
+  margin-bottom: 4rem;
+}
+.consultation-cat {
+  margin-top: 6.8rem;
+}
+.consultation-cat .thank {
+  background-color: ;
+  height: 48rem;
+  text-align: center;
+  color: ;
+  padding-top: 19rem;
+}
+.consultation-cat .thank-title {
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+.consultation {
+  text-align: center;
+  background: url(../images/bg-1.jpg) no-repeat right top;
+  background-size: cover;
+  color: ;
+  margin-bottom: 8.5rem;
+}
+.consultation .title {
+  padding-bottom: 2.8rem;
+}
+.consultation input {
+  margin-top: 2rem;
+  width: 100%;
+}
+.consultation input:not(.submit) {
+  background-color: ;
+  border: 4px solid ;
+  height: 5rem;
+  text-align: center;
+  width: 100%;
+}
+.consultation input:not(.submit):hover {
+  background-color: #726363;
+}
+.consultation .form {
+  background-color: ;
+  min-height: 48rem;
+  padding: 6.4rem 6rem;
+  width: 33.3%;
+}
+.listCat {
+  margin-bottom: 3.5rem;
+}
+.listCat header {
+  padding-bottom: 4.5rem;
+}
+.listCat h3 {
+  padding-top: 1.6rem;
+}
+.listCat .link {
+  padding-top: 4.5rem;
+  text-align: right;
+}
+.listCat .link a {
+  background-position: right 5px;
+  text-decoration: none;
+  padding-right: 33px;
+}
+.listFabrics {
+  margin-bottom: 9rem;
+  margin-top: 6.5rem;
+}
+.listFabrics .row {
+  margin-top: 4.5rem;
+}
+.listFabrics .item {
+  border: 4px solid ;
+  height: 13rem;
+}
+.listFabrics .item img {
+  line-height: 13rem;
+  vertical-align: top;
+}
+.listFabrics .item a {
+  display: block;
+  width: 100%;
+}
+.listFabrics .item:hover {
+  background-color: ;
+  border-color: ;
+}

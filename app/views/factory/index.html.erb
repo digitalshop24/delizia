@@ -1,0 +1,41 @@
+<!-- InstanceBeginEditable name="EditRegion3" -->
+	<div class="main">
+		<!-- =actions -->
+		<h1 class="text-center">Фабрики</h1>
+		<section class="fabrics">
+		<%@factories.each do |f|%>
+			<div class="container">
+				<article class="item row">
+					<div class="col-md-2 col-sm-3 col-xs-3">
+						<div class="pic">
+						<%= image_tag(f.logo.url(:medium), :class => "img-responsive") if f.logo%>
+						</div>
+					</div>
+					<div class="col-md-10 col-sm-9 col-xs-9">
+						<h2><a href="#" title=""><%=f.name%></a></h2>
+						<div class="text"><p><%=f.description%></p></div>
+					</div>
+
+					<!-- =listCat -->
+					<div class="listCat text-center col-xs-12">
+						<div class="row">
+						<%f.collections.each do |c| %>
+							<div class="col-sm-4 col-xs-12">
+								<%= image_tag(c.image.url(:medium), :class => "img-responsive") if f.logo%>
+								<h3><%=c.name%></h3>
+								<%=link_to "Подробней", "/catalog/#{c.id}", class: "btn"%>
+							</div>
+							<%end%>
+						</div>
+						<p class="link"><a href="#">Все коллекции производителя</a></p>
+					</div>
+					<!-- =/listCat -->	
+				</article>
+			</div>
+			<div class="line"></div>
+		<%end%>
+
+		</section>
+		<!-- =/actions -->
+	</div>
+	<!-- InstanceEndEditable -->

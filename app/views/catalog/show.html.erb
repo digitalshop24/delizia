@@ -1,0 +1,74 @@
+<div class="main">
+		<div class="container">
+			<!-- =product -->
+			<section class="product">
+				<header>
+					<h1><span>Каталог /</span> <%=@good.name%></h1>
+				</header>
+				<div class="row description">
+					<div class="col-md-5 col-sm-6 col-xs-12">
+						<div id="foo2" class="owl-carousel owl-theme">
+							<div>
+							<%= image_tag(@good.images.first.image.url(:big), :class => "img-responsive") if @good.images%>
+								<p class="slider-title">Minimali Luna Cream, White</p>
+							</div>
+							<div>
+							<%= image_tag(@good.images.last.image.url(:big), :class => "img-responsive") if @good.images%>
+							<p class="slider-title">Minimali Luna Cream, Black</p>
+							</div>
+						</div>
+					</div>
+					<div class="detail-text col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0 col-xs-12">
+						<table class="detail">
+							<tr>
+								<td>Фабрика:</td>
+								<td><%=@good.factory.name%></td>
+							</tr>
+							<tr>
+								<td>Зона применения:</td>
+								<td><%@good.zones.each do |z|%>
+								    	<%=z.name%> <br>
+									<%end%>
+								</td>
+							</tr>
+							<tr>
+								<td>Тип помещения:</td>
+								<td>
+									<%@good.types.each do |z|%>
+								    	<%=z.name%> <br>
+									<%end%>									
+								</td>
+							</tr>
+							<tr>
+								<td>Типология материала:</td>
+								<td><%@good.materials.each do |z|%>
+								    	<%=z.name%> <br>
+									<%end%></td>
+							</tr>
+						</table>
+						<div class="text" style="word-wrap: break-word;">
+							<p><%=@good.description%></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- =/product -->
+		</div>
+		<div class="line"></div>
+
+		<!-- =composition -->
+		<section class="composition container">
+			<header>
+				<h2>Состав коллекции</h2>
+			</header>
+			<div class="tiles row">
+				<%= render partial: "tiles" %>
+			</div>
+		</section>
+		<!-- =/composition -->
+		<div class="text-center load-more-container">
+	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
+					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+					<%= link_to "Показать еще", catalog_path ,class: "btn load-more" %>
+				</div>	
+	</div>

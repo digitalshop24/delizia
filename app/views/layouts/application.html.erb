@@ -1,14 +1,48 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/homepage.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
-  <title>Delizia</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+
+<!--<meta name="robots" content="noindex,nofollow" />-->
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Главная</title>
+<!-- InstanceEndEditable -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>  
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<link href="css/styles-ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 5.5)&(lte IE 8)]>
+	<link href="css/styles-ie8.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="js/selectivizr.js"></script>
+<![endif]-->
+
+<!--[if lte IE 6]>
+	<meta http-equiv="refresh" content="0; url=http://yoursite.com/ie6/ie6.html"> 	
+<![endif]-->
+
+
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
 </head>
 <body>
-
+<div class="outerwrapper">
+<%= render partial: "layouts/header" %>
 <%= yield %>
+</div>
+<%= render partial: "layouts/footer" %>
+
 
 </body>
-</html>
+<!-- InstanceEnd --></html>

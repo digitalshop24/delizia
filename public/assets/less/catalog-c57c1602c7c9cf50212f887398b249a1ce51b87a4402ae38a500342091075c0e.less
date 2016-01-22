@@ -1,0 +1,195 @@
+.catalog{
+	h1{
+		text-align: center;
+	}
+	.goods{
+		padding-top: 1.5rem;
+		padding-bottom: 2rem;
+	}
+	.cell{
+		margin-bottom: 2rem;
+		a{
+			.font-size(2.4);
+			font-weight: 300;
+			span{
+				display: block;
+				padding-top: 1.2rem;
+			}
+		}
+	}
+}
+
+.filter{
+	.btn{
+		padding-left: 2.5rem;
+		padding-right: 2.5rem;
+		width: auto;
+		margin-top: .5rem;
+	}
+	.row{
+		padding-bottom: 1.5rem;
+	}
+
+	.sort-down,
+	.sort-up{
+		display: inline-block;
+	}
+
+	.sort-down{
+		border-top: 11px solid #dcd7cf;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+		margin-left: 1rem;
+	}
+	.sort-up{
+		border-bottom: 11px solid #dcd7cf;
+		border-right: 6px solid transparent;
+		border-left: 6px solid transparent;
+	}
+
+	.slider{
+		float: left;
+		margin-top: -3px;
+		padding: 0;
+	}
+
+	.label{
+		.font-size(1.4);
+		color: @color1;
+		float: left;
+		font-weight: normal;
+		margin-right: 30px;
+		padding: 0;
+	}
+}
+
+.sizes{
+	.edge{
+		float: left;
+		color: @color4;
+		.font-size(.9)
+	}
+	.box{
+		float: left;
+		margin-left: .5rem;
+		margin-right: .5rem;
+		position: relative;	
+		top: 5px;
+		width: 140px;
+	}
+}
+
+
+// slider
+/**
+ * default development theme for jQRangeSlider
+ * Using fam fam icon set from Mark James, http://www.famfamfam.com/lab/icons/silk/ (Creative Commons Attribution 2.5 License)
+ */
+
+.ui-rangeSlider{
+	height:22px;
+}
+
+.ui-rangeSlider .ui-rangeSlider-innerBar{
+	height:1px;
+	/*margin:3px 6px;*/
+	background:#dcd7cf;
+}
+
+.ui-rangeSlider .ui-rangeSlider-handle{
+	/*cursor:col-resize;*/
+}
+
+.ui-rangeSlider .ui-rangeSlider-handle-inner{
+	width: 0;
+	height: 0;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 8px solid #201600;
+
+}
+
+.ui-rangeSlider-leftHandle .ui-rangeSlider-handle-inner{
+	margin-left: -4px;
+
+}
+
+.ui-rangeSlider-rightHandle .ui-rangeSlider-handle-inner{
+	margin-right: -4px;
+}
+
+
+.ui-rangeSlider .ui-rangeSlider-bar{
+	background:#201600;
+	height:1px;
+	cursor:move;
+	cursor:grab;
+	cursor: -moz-grab;
+}
+
+.ui-rangeSlider .ui-rangeSlider-bar.ui-draggable-dragging{
+	cursor:	-moz-grabbing;
+	cursor:grabbing;
+}
+
+.ui-rangeSlider-arrow{
+	height:16px;
+	margin:2px 0;
+	width:16px;
+	background-repeat:no-repeat;
+}
+
+.ui-rangeSlider-arrow.ui-rangeSlider-leftArrow{
+	background-image: url('icons-classic/resultset_previous.png');
+	background-position:center left;
+}
+
+.ui-rangeSlider-arrow.ui-rangeSlider-rightArrow{
+	background-image: url('icons-classic/resultset_next.png');
+	background-position:center right;
+}
+
+.ui-rangeSlider-arrow-inner{
+	display: none;
+}
+
+.ui-rangeSlider-container{
+	height:22px;
+}
+
+.ui-rangeSlider-withArrows .ui-rangeSlider-container{
+	margin:0 11px;
+}
+
+.ui-rangeSlider-noArrow .ui-rangeSlider-container{
+	margin:0;
+}
+
+.ui-rangeSlider-label{
+	font-size: 9px;
+	white-space: nowrap;
+	bottom:0;
+	cursor: default;
+}
+
+.ui-rangeSlider-label-inner{
+	display:none;
+}
+
+.ui-rangeSlider-leftLabel .ui-rangeSlider-label-value{
+	margin-left: -4px;
+}
+
+.ui-rangeSlider-rightLabel .ui-rangeSlider-label-value{
+	margin-right: -4px;
+}
+
+/*
+ * Edit slider
+ */
+
+input.ui-editRangeSlider-inputValue{
+	width:3em;
+	vertical-align: middle;
+	text-align:center;
+}

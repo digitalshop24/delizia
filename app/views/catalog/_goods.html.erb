@@ -1,0 +1,13 @@
+<% @goods.each do |g| %>
+						<div class="cell col-md-4 col-sm-6 col-xs-12">
+							 <div class="record" data-id="<%= g.id %>">
+							<% if g.images %>
+								<%= image_tag(g.images.first.image.url(:big), :class => "img-responsive center-block") %>
+							<%else%>	
+								<img src="tmp/cat.jpg" alt="" class="img-responsive center-block" />
+							<%end%>
+								<span><%= link_to g.name, catalog_path(g) %></span>
+							
+							</div>
+						</div>
+					<%end%>

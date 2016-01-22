@@ -1,0 +1,401 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,700,700italic&subset=latin,cyrillic-ext,cyrillic);
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/*** reset ***********/
+html,
+body,
+ul,
+ol,
+li,
+dl,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+a,
+img,
+label {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+header,
+section,
+footer,
+aside,
+nav,
+article {
+  display: block;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-size: 1.4rem;
+}
+html,
+body {
+  height: 100%;
+}
+*:focus {
+  outline: none;
+}
+input[type="text"] {
+  font-family: 'Roboto', sans-serif;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+/*** standart classes *****/
+a {
+  color: #000000;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #000000;
+}
+a[href^="tel"] {
+  text-decoration: none;
+}
+a[href^="tel"]:hover {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #201600;
+}
+h1 {
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+h4 {
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+*:focus {
+  outline: none;
+}
+.before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.link a {
+  text-decoration: underline;
+}
+.link a:hover {
+  text-decoration: none;
+}
+.tdn {
+  text-decoration: none;
+}
+.tdn:hover {
+  text-decoration: underline;
+}
+.tdu {
+  text-decoration: underline;
+}
+.tdu:hover {
+  text-decoration: none;
+}
+.line {
+  height: 1px;
+  background: #201600;
+  margin: 5rem 0;
+}
+.title {
+  font-size: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1;
+}
+.submit {
+  font-size: 18px;
+  font-size: 1.8rem;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background-color: #201600;
+  border: none;
+  color: #ffffff;
+  height: 5rem;
+  width: 26rem;
+}
+.submit:hover {
+  background-color: #483b3b;
+  border: 4px solid #ffffff;
+}
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  border: 4px solid #201600;
+  color: #201600;
+  display: inline-block;
+  line-height: 4.2rem;
+  margin-top: 2.5rem;
+  padding: 0 5rem;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  background-color: #eae7e2;
+  text-decoration: none;
+}
+.owl-buttons {
+  position: absolute;
+  right: 0;
+  width: 60px;
+}
+.owl-buttons div {
+  background-image: image-url('sprite.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 23px;
+  width: 13px;
+}
+.owl-buttons div.owl-prev {
+  background-position: 0 -15px;
+  float: left;
+}
+.owl-buttons div.owl-prev:hover {
+  background-position: 0 -38px;
+}
+.owl-buttons div.owl-next {
+  background-position: -13px -15px;
+  float: right;
+}
+.owl-buttons div.owl-next:hover {
+  background-position: -13px -38px;
+}
+/* =header
+---------------------------*/
+.header {
+  padding-top: 28px;
+}
+.header .logo {
+  padding-top: 3px;
+}
+.header .logo a {
+  margin-left: 1.2rem;
+}
+.header .contacts p {
+  line-height: 1.6;
+}
+.header .line {
+  background: #dcd7cf;
+  height: 1px;
+  margin-top: -17px;
+  margin-bottom: 0;
+}
+.header .phones span {
+  font-size: 10px;
+  font-size: 1rem;
+}
+.header .navbar {
+  background: none;
+  border: none;
+  padding-bottom: 2rem;
+  margin-top: 4px;
+  margin-bottom: 0;
+  min-height: 0;
+}
+.header .navbar .navbar-collapse {
+  padding: 0;
+}
+.header .navbar ul {
+  float: right;
+}
+.header .navbar li {
+  display: inline-block;
+  padding-left: 4.5rem;
+  text-align: right;
+}
+.header .navbar li.active a {
+  text-decoration: underline;
+}
+.header .navbar li.active a:hover {
+  text-decoration: none;
+}
+.header,
+footer {
+  background: #483b3b;
+  color: #dcd7cf;
+}
+.header a,
+footer a {
+  color: #dcd7cf;
+}
+/* =/header
+---------------------------*/
+/* =navigation
+---------------------------*/
+nav ul {
+  list-style: none;
+}
+nav ul li {
+  float: left;
+}
+/* =/navigation
+---------------------------*/
+/* =main
+---------------------------*/
+.outerwrapper {
+  padding-bottom: 295px;
+}
+.outerwrapper {
+  position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+.main {
+  margin: 6rem 0 7rem;
+}
+.main h1 {
+  padding-bottom: 4rem;
+}
+.main img {
+  max-width: 100%;
+}
+/* =footer
+---------------------------*/
+footer {
+  height: 295px;
+  margin-top: -295px;
+  position: relative;
+  color: #ffffff;
+}
+footer .container {
+  padding-top: 65px;
+}
+footer a {
+  color: #ffffff;
+}
+footer a:hover,
+footer a:focus {
+  color: #ffffff;
+}
+footer .menu-1,
+footer .menu-2 {
+  font-weight: 300;
+}
+footer .menu-1 li,
+footer .menu-2 li {
+  padding-bottom: .4rem;
+}
+footer .menu-1 {
+  font-size: 18px;
+}
+footer .menu-2 .title {
+  font-size: 18px;
+  line-height: normal;
+}
+footer .contacts {
+  text-align: right;
+}
+footer .contacts p {
+  margin: .2rem 0 .5rem;
+}
+footer .contacts .viber {
+  margin-right: 10px;
+  margin-top: -2px;
+  vertical-align: middle;
+}
+/* =/footer
+---------------------------*/
+.body_page_error {
+  background: url(../images/bg-2.jpg) no-repeat center top #413c38;
+  height: 100%;
+}
+.page_error {
+  color: #201600;
+  text-align: center;
+  height: 100%;
+}
+.page_error .num {
+  font-size: 110px;
+  font-size: 11rem;
+  padding-top: 50%;
+}
+.page_error p {
+  font-size: 10px;
+  font-size: 1rem;
+}
+.page_error .btn {
+  font-size: 10px;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 15px 55px;
+  text-decoration: none;
+}
+.justifyleft {
+  text-align: left !important;
+}
+.justifyright {
+  text-align: right !important;
+}
+.justifycenter {
+  text-align: center !important;
+}
+.justifyfull {
+  text-align: justify !important;
+}
+img.justifyleft,
+table.justifyleft {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+img.justifyright,
+table.justifyright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+img.justifycenter,
+table.justifycenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

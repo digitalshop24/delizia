@@ -1,0 +1,83 @@
+<!-- InstanceBeginEditable name="EditRegion3" -->
+	<div class="main">
+		<div class="container">
+			<div class="catalog">
+				<h1>Каталог</h1>
+				<!-- =filter -->
+				<div class="filter row">
+					<div class="col-md-8 col-sm-9 col-xs-12">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<select name="producer" id="producer">
+									<option value="">Пункт 1</option>
+									<option value="">Пункт 2</option>
+									<option value="">Пункт 3</option>
+									<option value="">Пункт 4</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<select name="type" id="type">
+									<option value="">Ванная</option>
+									<option value="">Кухня</option>
+									<option value="">Прихожая</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								<select name="appointment" id="appointment">
+									<option value="">Пункт 1</option>
+									<option value="">Пункт 2</option>
+									<option value="">Пункт 3</option>
+									<option value="">Пункт 4</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-6">
+								Цена
+								<a href="#" class="sort-down"></a>
+								<a href="#" class="sort-up"></a>
+							</div>
+						</div>
+						<div class="row sizes">
+							<div class="col-xs-6">
+								<div class="label">Длина</div>
+								<div class="slider">
+									<span class="edge">0</span>
+									<div class="box">
+										<div id="slider1"></div>
+									</div>
+									<span class="edge">150</span>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="label">Ширина</div>
+								<div class="slider">
+									<span class="edge">0</span>
+									<div class="box">
+										<div id="slider2"></div>
+									</div>
+									<span class="edge">150</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-12 text-right pull-right">
+						<a href="#" class="btn">Применить фильтр</a>
+					</div>
+				</div>
+				<!-- =/filter -->
+
+				<!-- =goods -->
+				<div class="goods text-center row">
+				<%= render partial: "goods" %>
+					
+				</div>
+				<!-- =/goods -->
+				<div class="text-center load-more-container">
+	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
+					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+					<%= link_to "Показать еще", catalog_index_path ,class: "btn load-more" %>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- InstanceEndEditable -->

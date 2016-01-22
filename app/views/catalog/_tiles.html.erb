@@ -1,0 +1,27 @@
+<% @tiles.each do |g| %>
+						<div class="item col-md-4 col-sm-6 col-xs-12">
+						<div class="record" data-id="<%= g.id %>">
+					<div class="row">
+						<div class="pic col-sm-5 col-xs-3">
+							<div>
+								<a href="tmp/1.jpg" class="fancybox"><%= image_tag(g.image.url(:medium), :class => "img-responsive center-block") if g.image %></a>
+							</div>
+						</div>
+						<div class="description col-sm-7 col-xs-8">
+							<h4> <%=g.name%></h4>
+							<p>Размер:</p>
+							<p class="value"><%=g.width%>x<%=g.length%></p>
+							<p>Поверхность: </p>
+							<p class="value"><%=g.surface.name if g.surface%></p>
+							<p>Цена: </p>
+							<p class="value"><%=g.price%> м2</p>
+							<p class="value"><%=g.compose_price%> композиция</p>
+							<p class="value"><%=g.single_price%> шт.</p>
+						</div>
+					</div>
+					</div>
+				</div>
+<%end%>
+
+
+					

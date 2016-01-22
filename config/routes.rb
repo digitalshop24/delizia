@@ -7,8 +7,13 @@ delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
+  root 'home#index'
+  resources :about
+  resources :catalog
+  resources :factory
+  resources :payment
+  resources :news
+  resources :contacts
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
