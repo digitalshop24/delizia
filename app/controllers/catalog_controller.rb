@@ -1,6 +1,5 @@
 class CatalogController < ApplicationController
 	def index
-		binding.pry
 		if params[:one]
 			width_max = params[:width][:max].to_i
 			width_min = params[:width][:min].to_i
