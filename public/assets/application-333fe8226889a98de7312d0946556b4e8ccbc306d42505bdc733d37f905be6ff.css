@@ -211,7 +211,7 @@ input::-moz-focus-inner {
   width: 60px;
 }
 .owl-buttons div {
-  background-image: url(images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 23px;
@@ -583,7 +583,7 @@ table.justifycenter {
   text-align: right;
 }
 .listCat .link a {
-  background-image: url(images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-position: right 5px;
@@ -19748,7 +19748,7 @@ input::-moz-focus-inner {
 
 /* line 4, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/home.scss */
 .owl-buttons div {
-  background-image: url(../images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 23px;
@@ -20166,7 +20166,7 @@ img.justifycenter, table.justifycenter {
 /* line 4, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/home.scss */
 .consultation {
   text-align: center;
-  background: url(../images/bg-1.jpg) no-repeat right top;
+  background: image-url('bg-1.jpg') no-repeat right top;
   background-size: cover;
   color: #fff;
   margin-bottom: 8.5rem;
@@ -20234,7 +20234,7 @@ img.justifycenter, table.justifycenter {
 
 /* line 4, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/home.scss */
 .listCat .link a {
-  background-image: url(../images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-position: right 5px;
@@ -22863,7 +22863,7 @@ input::-moz-focus-inner {
 
 /* line 1, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/styles.scss */
 .owl-buttons div {
-  background-image: url(../images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 23px;
@@ -23281,7 +23281,7 @@ img.justifycenter, table.justifycenter {
 /* line 1, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/styles.scss */
 .consultation {
   text-align: center;
-  background: url("bg-1.jpg") no-repeat right top;
+  background: image-url('bg-1.jpg') no-repeat right top;
   background-size: cover;
   color: #fff;
   margin-bottom: 8.5rem;
@@ -23349,7 +23349,7 @@ img.justifycenter, table.justifycenter {
 
 /* line 1, /Users/administrator/Desktop/delizia/delizia/app/assets/stylesheets/styles.scss */
 .listCat .link a {
-  background-image: url(../images/sprite.png);
+  background-image: image-url('sprite.png');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-position: right 5px;

@@ -9,6 +9,7 @@
 						<div class="row">
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								<select name="producer" id="producer">
+									<option selected disabled>Производитель</option>
 									<%@factories.each do |f| %>
 									  <option value=""><%=f.name%></option>
 									<%end%>
@@ -16,6 +17,7 @@
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								<select name="type" id="type">
+									<option selected disabled>Тип помещения</option>
 									<%@types.each do |f| %>
 									  <option value=""><%=f.name%></option>
 									<%end%>
@@ -23,6 +25,7 @@
 							</div>
 							<div class="col-md-3 col-sm-3 col-xs-6">
 								<select name="appointment" id="appointment">
+									<option selected disabled>Назначение</option>
 									<%@zones.each do |f| %>
 									  <option value=""><%=f.name%></option>
 									<%end%>

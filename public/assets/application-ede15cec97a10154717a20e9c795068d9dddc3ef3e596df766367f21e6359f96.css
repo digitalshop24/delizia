@@ -215,7 +215,7 @@ input::-moz-focus-inner {
 
 /* line 1, /Users/administrator/Desktop/delizia_last/delizia/app/assets/stylesheets/styles.scss */
 .owl-buttons div {
-  background-image: image-url('sprite.png');
+  background-image: url(/assets/sprite-1b28ac1504839adf656c41779ed00d11118adcd71cf60592813b6adfb0a58223.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 23px;
@@ -633,7 +633,7 @@ img.justifycenter, table.justifycenter {
 /* line 1, /Users/administrator/Desktop/delizia_last/delizia/app/assets/stylesheets/styles.scss */
 .consultation {
   text-align: center;
-  background: image-url('bg-1.jpg') no-repeat right top;
+  background: url("bg-1.jpg") no-repeat right top;
   background-size: cover;
   color: #fff;
   margin-bottom: 8.5rem;
@@ -20580,7 +20580,7 @@ img.justifycenter, table.justifycenter {
 /* line 4, /Users/administrator/Desktop/delizia_last/delizia/app/assets/stylesheets/home.scss */
 .consultation {
   text-align: center;
-  background: image-url('bg-1.jpg') no-repeat right top;
+  background: url(../images/bg-1.jpg) no-repeat right top;
   background-size: cover;
   color: #fff;
   margin-bottom: 8.5rem;
@@ -23277,7 +23277,7 @@ input::-moz-focus-inner {
 
 /* line 1, /Users/administrator/Desktop/delizia_last/delizia/app/assets/stylesheets/styles.scss */
 .owl-buttons div {
-  background-image: image-url('sprite.png');
+  background-image: url(/assets/sprite-1b28ac1504839adf656c41779ed00d11118adcd71cf60592813b6adfb0a58223.png);
   background-repeat: no-repeat;
   background-position: 0 0;
   height: 23px;
@@ -23695,7 +23695,7 @@ img.justifycenter, table.justifycenter {
 /* line 1, /Users/administrator/Desktop/delizia_last/delizia/app/assets/stylesheets/styles.scss */
 .consultation {
   text-align: center;
-  background: image-url('bg-1.jpg') no-repeat right top;
+  background: url("bg-1.jpg") no-repeat right top;
   background-size: cover;
   color: #fff;
   margin-bottom: 8.5rem;
