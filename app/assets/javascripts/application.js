@@ -24,7 +24,7 @@
 
 $(document).ready(function () {
     // when the load more link is clicked
-    $('a.load-more').click(function (e) {
+	$('a.load-more').click(function (e) {
 
         // prevent the default click action
         e.preventDefault();
@@ -65,20 +65,12 @@ $(document).ready(function () {
 });
 
 function func() {
-var array = {
-width: $('#slider2').rangeSlider("values"),
-length: $('#slider1').rangeSlider("values"),
-type: $('#type option:selected').text(),
-zone: $('#appointment option:selected').text(),
-factory: $('#producer option:selected').text()
-}
-
-$.ajax({
-	        url : "/catalog",
-	        type : "get",
-beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-	data : array
-   
-});
-
+var widthmax = $('#slider2').rangeSlider("values").max;
+var widthmin = $('#slider2').rangeSlider("values").min;
+var lengthmax = $('#slider1').rangeSlider("values").max;
+var lengthmin = $('#slider1').rangeSlider("values").min;
+var type =  $('#type option:selected').text();
+var zone = $('#appointment option:selected').text();
+var factory =  $('#producer option:selected').text();
+window.location = 'catalog?width_max=' + widthmax + '&width_min=' + widthmin + '&length_min=' + lengthmin + '&length_max=' + lengthmax + '&type=' + type + '&zone=' + zone + '&factory=' + factory;
 }
