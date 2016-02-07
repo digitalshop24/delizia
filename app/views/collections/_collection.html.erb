@@ -1,10 +1,10 @@
 <div class="cell col-md-4 col-sm-6 col-xs-12 record" data-id="<%= collection.id %>">
-    <% if collection.images %>
+    <% if collection.image_file_name %>
       <%= link_to catalog_path(collection) do %>	
-        <%= image_tag(collection.images.first.image.url(:big), :class => "img-responsive center-block") %>
+        <%= image_tag(collection.image.url(:big), class: "img-responsive center-block") %>
       <%end%>
     <%else%>	
-<img src="<%= asset_path "cat.jpg" %>" alt="" class="img-responsive center-block" />
+		<img src="<%= asset_path "cat.jpg" %>" alt="" class="img-responsive center-block" />
     <%end%>
     <span><%= link_to collection.name, catalog_path(collection) %></span>    
 </div>

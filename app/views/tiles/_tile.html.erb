@@ -1,22 +1,22 @@
 <div class="item col-md-4 col-sm-6 col-xs-12">
-						<div class="record" data-id="<%= tile.id %>">
-					<div class="row">
-						<div class="pic col-sm-5 col-xs-3">
-							<div>
-								<a href="tmp/1.jpg" class="fancybox"><%= image_tag(tile.image.url(:medium), :class => "img-responsive center-block") if tile.image %></a>
-							</div>
-						</div>
-						<div class="description col-sm-7 col-xs-8">
-							<h4> <%=tile.name%></h4>
-							<p>Размер:</p>
-							<p class="value"><%=tile.width%>x<%=tile.length%></p>
-							<p>Поверхность: </p>
-							<p class="value"><%=tile.surface.name if tile.surface%></p>
-							<p>Цена: </p>
-							<p class="value"><%=(tile.price.to_i*(@course.to_i)).to_s%> м2</p>
-							<p class="value"><%=(tile.compose_price.to_i*@course.to_i).to_s%> композиция</p>
-							<p class="value"><%=(tile.single_price.to_i*@course.to_i).to_s%> шт.</p>
-						</div>
-					</div>
-					</div>
-				</div>
+		<div class="record" data-id="<%= tile.id %>">
+	<div class="row">
+		<div class="pic col-sm-5 col-xs-3">
+			<div>
+				<a href="<%= asset_path(tile.image.url) %>" class="fancybox"><%= image_tag(tile.image.url(:medium), :class => "img-responsive center-block") if tile.image_file_name %></a>
+			</div>
+		</div>
+		<div class="description col-sm-7 col-xs-8">
+			<h4> <%=tile.name%></h4>
+			<p>Размер:</p>
+			<p class="value"><%=tile.width%>x<%=tile.length%></p>
+			<p>Поверхность: </p>
+			<p class="value"><%=tile.surface.name if tile.surface%></p>
+			<p>Цена: </p>
+			<p class="value"><%=(tile.price.to_i*(@course.to_i)).to_s%> м2</p>
+			<p class="value"><%=(tile.compose_price.to_i*@course.to_i).to_s%> композиция</p>
+			<p class="value"><%=(tile.single_price.to_i*@course.to_i).to_s%> шт.</p>
+		</div>
+	</div>
+	</div>
+</div>
