@@ -3,7 +3,7 @@
 		<!-- =actions -->
 		<h1 class="text-center">Фабрики</h1>
 		<section class="fabrics">
-		<%@factories.each do |f|%>
+		<% @factories.each do |f| %>
 	          <div class="container">
 	            <article class="item row">
 		    <div class="col-md-2 col-sm-3 col-xs-3">
@@ -27,13 +27,15 @@
 			  </div>
 			<%end%>
 		       </div>
-		       <p class="link"><a href="#">Все коллекции производителя</a></p>
+		       <p class="link">
+		       	<%= link_to 'Все коллекции производителя', catalog_index_path({ factories: f.id }) %>
+		       </p>
 		     </div>
 		     <!-- =/listCat -->	
 		     </article>
 			</div>
 			<div class="line"></div>
-		<%end%>
+		<% end %>
 
 		</section>
 		<!-- =/actions -->

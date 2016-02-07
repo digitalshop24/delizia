@@ -1,1 +1,11 @@
-$('.tiles').append('<%= escape_javascript(render(:partial => "tiles")) %>')
+// $('.tiles').append('<%= escape_javascript(render(:partial => "tiles")) %>')
+
+$('.tiles').html('');
+$('.tiles').append('<%= j render @tiles %>');
+l = $('.load-more');
+console.log('<%= @show_more %>');
+<% if @show_more %>
+	l.removeClass('hidden');
+<% else %>
+	l.addClass('hidden');
+<% end %>

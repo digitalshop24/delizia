@@ -8,6 +8,7 @@ delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
 
   # You can have the root of your site routed with "root"
   root 'home#index'
+  # get 'catalog/filter', to: 'catalog#filter', as: :catalog_filter
   resources :about
   resources :catalog
   resources :factory

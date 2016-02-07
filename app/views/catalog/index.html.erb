@@ -4,80 +4,118 @@
 			<div class="catalog">
 				<h1>Каталог</h1>
 				<!-- =filter -->
-				<div class="filter row">
-					<div class="col-md-8 col-sm-9 col-xs-12">
-						<div class="row">
-							<div class="col-md-3 col-sm-3 col-xs-6">
-								<select name="producer" id="producer">
-									<option selected disabled>Производитель</option>
-									<%@factories.each do |f| %>
-									  <option value=""><%=f.name%></option>
-									<%end%>
-								</select>
-							</div>
-							<div class="col-md-3 col-sm-3 col-xs-6">
-								<select name="type" id="type">
-									<option selected disabled>Тип помещения</option>
-									<%@types.each do |f| %>
-									  <option value=""><%=f.name%></option>
-									<%end%>
-								</select>
-							</div>
-							<div class="col-md-3 col-sm-3 col-xs-6">
-								<select name="appointment" id="appointment">
-									<option selected disabled>Назначение</option>
-									<%@zones.each do |f| %>
-									  <option value=""><%=f.name%></option>
-									<%end%>
-								</select>
-							</div>
-							<div class="col-md-3 col-sm-3 col-xs-6">
-								Цена
-								<a href="#" class="sort-down"></a>
-								<a href="#" class="sort-up"></a>
-							</div>
-						</div>
-						<div class="row sizes">
-							<div class="col-xs-6">
-								<div class="label">Длина</div>
-								<div class="slider">
-									<span class="edge">0</span>
-									<div class="box">
-										<div id="slider1"></div>
-									</div>
-									<span class="edge">150</span>
-								</div>
-							</div>
-							<div class="col-xs-6">
-								<div class="label">Ширина</div>
-								<div class="slider">
-									<span class="edge">0</span>
-									<div class="box">
-										<div id="slider2"></div>
-									</div>
-									<span class="edge">150</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-sm-3 col-xs-12 text-right pull-right">
-						<Input value = "Применить фильтр" type='Button' class ='lol btn' onclick="func()">
-					</div>
-				</div>
+			
 				<!-- =/filter -->
 
 				<!-- =goods -->
-				<div class="goods text-center row">
-				<%= render partial: "goods" %>
+				<div class="text-center row">
+				 <div class="col-md-3">
+				 	<%= form_tag catalog_index_path, method: :get, remote: true do %>
+				 		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
+							  Производитель
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter1">
+						  	<div class="well text-left">
+						  		<ul>
+						  			<% @factories.each do |f| %>
+                      <li><label><%= check_box_tag 'factories[]', f.id, f.id == params[:factories].to_i %> <%= f.name %><br></label></li>
+									  <% end %>
+						  		</ul>
+						 		</div>
+							</div>
+						</div>
+
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter2" aria-expanded="false" aria-controls="filter2">
+							  Тип помещения
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter2">
+							  	<div class="well text-left">
+							  		<ul>
+							  			<% @types.each do |type| %>
+									      <li><label><%= check_box_tag 'types[]', type.id, type.id == params[:types].to_i %> <%=type.name%><br></label></li>
+											<% end %>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter3" aria-expanded="false" aria-controls="filter3">
+							  Назначение
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter3">
+							  	<div class="well text-left">
+							  		<ul>
+							  			<% @zones.each do |zone| %>
+                        <li><label><%= check_box_tag 'zones[]', zone.id %> <%= zone.name %><br></label></li>
+									    <% end %>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter4" aria-expanded="false" aria-controls="filter4">
+							  Цена
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter4">
+							  	<div class="well">
+							  		<ul>
+							  			<li><label><input type="radio" name="price" value="0-200"> до 200</label><Br></li>
+										  <li><label><input type="radio" name="price" value="200-500"> 200-500</label><Br></li>
+										  <li><label><input type="radio" name="price" value="500-999999"> больше 500</label><Br></li>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter5" aria-expanded="false" aria-controls="filter5">
+							  Размеры
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter5">
+							  	<div class="well">
+							  		<ul>
+                      <% @sizes.each do |size| %>
+                        <li><label>
+                          <%= check_box_tag 'sizes[]', "#{size[0]}X#{size[1]}" %> <%= "#{size[0]}X#{size[1]}" %><br>
+                        </label></li> 
+							  			<% end %>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+
+						<div class="filt_p text-left">
+              <%= hidden_field_tag 'pages', 1, id: 'pages_number' %>
+							<%= submit_tag "Применить фильтр", class: "btn", onclick: '$("#pages_number").val(1)' %>
+						</div>
+
 					
-				</div>
-				<!-- =/goods -->
-				<div class="text-center load-more-container">
-	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
-					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
-					<%= link_to "Показать еще", catalog_index_path ,class: "btn load-more" if @flag%>
-				</div>
-				
+  				 </div>
+  					<div class="col-md-9">
+    					  <div class="goods row">
+  					    	<%= render @goods %>
+  				      </div>
+  				    </div>	
+  				  </div>
+  				<!-- =/goods -->
+  				<div class="text-center load-more-container">
+  	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
+  					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+  					<%= submit_tag "Показать еще", class: "btn load-more hidden", onclick: '$("#pages_number").val(+$("#pages_number").val()+1)' %>
+            <% if @show_more %><script>$('.load-more').removeClass('hidden')</script><% end %>
+  				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

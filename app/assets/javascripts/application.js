@@ -10,7 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-1.11.2.min
+//= require jquery
+//= require jquery_ujs
+
 //= require jquery.validate.min
 //= require bootstrap.min
 //= require owl.carousel.min

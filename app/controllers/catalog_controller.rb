@@ -1,73 +1,55 @@
 class CatalogController < ApplicationController
-	def index
-		@factories = Factory.all
-	  @zones = Zone.all
-		@types = Type.all
-		if params[:width_max]
-			@width_max = params[:width_max].to_i
-			@width_min = params[:width_min].to_i
-		  @length_max = params[:length_max].to_i
-			@length_min = params[:length_min].to_i
-			@type = params[:type]
-			@zone = params[:zone]
-			@factory = params[:factory]	
-			if @type == 'Тип помещения'
-				if @zone == 'Назначение'	
-					if @factory == 'Производитель'
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id)
-					else
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:factory).where(:factories => {:name => @factory})
-					end
-				else
-					if @factory = 'Производитель'			
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:zones).where(:zones => {:name => @zone})
-					else
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:zones).where(:zones => {:name => @zone}).joins(:factory).where(:factories => {:name => @factory})
-					end
-				end
-			else
-				if @zone == 'Назначение'
-					if @factory == 'Производитель'
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:types).where(:types => {:name => @type})
-					else	
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:factory).where(:factories => {:name => @factory}).joins(:types).where(:types => {:name => @type})
-					end
-				else
-					if @factory == 'Производитель'
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:zones).where(:zones => {:name => @zone}).joins(:types).where(:types => {:name => @type})
-					else
-						@goods = Collection.joins(:tiles).where('tiles.width' => @width_min..@width_max, 'tiles.length' => @length_min..@length_max).group(:id).joins(:zones).where(:zones => {:name => @zone}).joins(:types).where(:types => {:name => @type}).joins(:factory).where(:factories => {:name => @factory})
-					end
-				end
-			end
-		else
-			@flag = 1
-			if params[:start_id]
-				@goods = Collection.where('id < ?', params[:start_id]).limit(9)
-			else
-				@goods = Collection.limit(9)
-			end
-    end
-    respond_to do |format|
-			format.html
-      format.js
-    end
-	end
 
-	def show
-		@course = Currency.last.course
-		@good = Collection.find(params[:id])
-		if params[:start_id]
-			@tiles = @good.tiles.where('id < ?', params[:start_id]).limit(9)
-		else
-			@tiles = @good.tiles.limit(9)
-		end
-		respond_to do |format|
-      format.html
-      format.js
+  before_action :set_all, only: [:filter, :index, :show]
+
+  def set_all
+    @factories = Factory.all
+    @zones = Zone.all
+    @types = Type.all
+    @sizes = Tile.pluck(:width, :length).uniq
+  end
+
+  def index
+    @goods = Collection.all
+    if params
+      @goods = @goods.joins(:types).where(types: { id: params[:types] }) if params[:types]
+      @goods = @goods.joins(:factory).where(factories: { id: params[:factories] }) if params[:factories]
+      @goods = @goods.joins(:zones).where(zones: { id: params[:zones] }) if params[:zones]
+
+      if params[:sizes]
+        sizes = '(' + params[:sizes].map{ |s| a = s.split('X'); "(#{a.first}, #{a.second})" }.join(', ')
+        @goods = @goods.joins(:tiles).where("tiles.width, tiles.length) IN #{sizes}").group(:id)
+      end      
     end
-	end
-	def create
-		binding.pry
-	end
+    number = Collection::PER_PAGE * (params[:pages] ? params[:pages].to_i : 1)
+    @show_more = @goods.count > number
+    @goods = @goods.limit(number)
+  end
+
+  def show
+    # @factories = Factory.all
+    # @zones = Zone.all
+    # @types = Type.all
+
+    @course = Currency.last.course
+    @good = Collection.find(params[:id])
+
+    @tiles = @good.tiles
+    number = Collection::PER_PAGE * (params[:pages] ? params[:pages].to_i : 1)
+    @show_more = @tiles.count > number
+    @tiles = @tiles.limit(number)
+
+    # if params[:start_id]
+    #   @tiles = @good.tiles.where('id < ?', params[:start_id]).limit(9)
+    # else
+    #   @tiles = @good.tiles.limit(9)
+    # end
+    # respond_to do |format|
+    #   format.html
+    #   format.js
+    # end
+  end
+  def create
+    # binding.pry
+  end
 end

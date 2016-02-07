@@ -7,30 +7,41 @@
 				</header>
 				<div class="row">
 					<div class="card text-center col-md-4 col-xs-12">
-						<div class="inner">
-							<div class="cell address">
-								<img src="images/label.png" alt="" />
-								<p>г. Минск</p>
-								<p>пр. Дзержинского, д.11,</p>
-								<p>пом. 738</p>
-							</div>
+            <div class="inner">
+              <div class="cell address">
+                <%= image_tag 'label.png' %>
+                <p>г. Минск</p>
+                <p>пр. Дзержинского, 11</p>
+                
+              </div>
 
-							<div class="cell phones">
-								<img src="images/smartphone.png" alt="" />
-								<p><span>+375 (17)</span> 278 88 66</p>
-								<p><span>+375 (29)</span> 678 88 66</p>
-							</div>
+              <div class="cell phones">
+                <%= image_tag 'smartphone.png' %>
+                <p>
+                  <%= image_tag 'tel.png', width: 15, height: 15, class: 'viber' %>
+                  <a href="tel:+375296788866" title="">+375 (29) 27 888 66</a>
+                </p>
+                  <p>
+                    <%= image_tag 'velcom.png', width: 15, height: 15, class: 'viber' %>
+                    <a href="tel:+375296788866" title="">+375 (29) 67 888 66</a>
+                  </p>
+                <p>
+                  <%= image_tag 'mts.png', width: 15, height: 15, class: 'viber' %>
+                  <a href="tel:+375296788866" title="">+375 (29) 59 888 66</a>
+                </p>
+              </div>
 
-							<div class="cell time">
-								<img src="images/clock.png" alt="" />
-								<p>09:00 -21:00 </p>
-								<p>ПН. - ВС	</p>
-							</div>
-						</div>
-					</div>
+              <div class="cell time">
+                <%= image_tag 'clock.png' %>
+                <p>пн - пт 10:00 - 20:00</p>
+                <p>сб. 10:00 -  18:00</p>
+              </div>
+            </div>
+          </div>
 					<div class="map col-md-8 col-xs-12">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.4570715993545!2d27.518517815962728!3d53.88807954169559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbd003265222cb%3A0xa9bbea261dcda812!2z0L_RgNC-0YHQvy4g0JTQt9C10YDQttC40L3RgdC60L7Qs9C-IDExLCDQnNC40L3RgdC6IDIyMDA4OSwg0JHQtdC70LDRgNGD0YHRjA!5e0!3m2!1sru!2sua!4v1452853696340" width="100%" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
-					</div>
+            <script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=bWQsy2xE_wXOh7IgZH1BYMeB3E79u_fO&width=100%&height=480&lang=ru_RU&sourceType=constructor"></script>
+          </div>
+
 				</div>
 			</section>
 			<!-- =/contacts -->

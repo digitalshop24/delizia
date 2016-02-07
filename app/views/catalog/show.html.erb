@@ -56,19 +56,114 @@
 		</div>
 		<div class="line"></div>
 
+    <%= form_tag catalog_path(@good), method: :get, remote: true do %>
 		<!-- =composition -->
 		<section class="composition container">
 			<header>
 				<h2>Состав коллекции</h2>
 			</header>
-			<div class="tiles row">
-				<%= render partial: "tiles" %>
+			<div class="row">
+			  <div class="col-md-3">
+          
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
+							  Производитель
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter1">
+							  	<div class="well text-left">
+							  		<ul>
+							  			<% @factories.each do |f| %>
+							  			  <input type="checkbox" name="option2" value=""> <%=f.name%> <Br>
+										<%end%>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter2" aria-expanded="false" aria-controls="filter2">
+							  Тип помещения
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter2">
+							  	<div class="well text-left">
+							  		<ul>
+							  			<%@types.each do |f| %>
+									      <input type="checkbox" name="option2" value=""> <%=f.name%> <Br>
+										<%end%>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter3" aria-expanded="false" aria-controls="filter3">
+							  Назначение
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter3">
+							  	<div class="well text-left">
+							  		<ul>
+							  			<%@zones.each do |f| %>
+									      <input type="checkbox" name="option2" value=""> <%=f.name%> <Br>
+									    <%end%>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter4" aria-expanded="false" aria-controls="filter4">
+							  Цена
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter4">
+							  	<div class="well">
+							  		<ul>
+							  			<input type="checkbox" name="option2" value=""> 1-200<Br>
+							  			<input type="checkbox" name="option2" value=""> 200-1000<Br>
+							  			<input type="checkbox" name="option2" value=""> 1000-2000<Br>
+							  			<input type="checkbox" name="option2" value=""> 2000-5000<Br>
+							  			<input type="checkbox" name="option2" value=""> 5000-10000<Br>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+						<div class="filt_p text-left">
+							<a class="" role="button" data-toggle="collapse" href="#filter5" aria-expanded="false" aria-controls="filter5">
+							  Размеры
+							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+							</a>
+							<div class="collapse" id="filter5">
+							  	<div class="well">
+							  		<ul>
+							  			<input type="checkbox" name="option2" value=""> 15Х20<Br>
+							  			<input type="checkbox" name="option2" value=""> 150Х200<Br>
+							  			<input type="checkbox" name="option2" value=""> 15Х20<Br>
+							  			<input type="checkbox" name="option2" value=""> 15Х20<Br>
+							  			<input type="checkbox" name="option2" value=""> 15Х10<Br>
+							  		</ul>
+							 	</div>
+							</div>
+						</div>
+						<div class="filt_p text-left">
+              <%= hidden_field_tag 'pages', 1, id: 'pages_number' %>
+              <%= submit_tag "Применить фильтр", class: "btn", onclick: '$("#pages_number").val(1)' %>
+							<!--<a href="#" class="btn">Применить фильтр</a>-->
+						</div>
+				 </div>
+			  <div class="col-md-9">
+			    <div class="row tiles">
+				    <%= render @tiles %>
+				</div>
+			  </div>
 			</div>
 		</section>
 		<!-- =/composition -->
 		<div class="text-center load-more-container">
 	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
 					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
-					<%= link_to "Показать еще", catalog_path ,class: "btn load-more" %>
-				</div>	
+					<% link_to "Показать еще", catalog_path, class: "btn load-more" %>
+          <%= submit_tag "Показать еще", class: "btn load-more hidden", onclick: '$("#pages_number").val(+$("#pages_number").val()+1)' %>
+          <% if @show_more %><script>$('.load-more').removeClass('hidden')</script><% end %>
+				</div>
+        <% end %>	
 	</div>

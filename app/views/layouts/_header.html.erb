@@ -1,16 +1,22 @@
 <header class="header">
+		<div class="search hidden-xs">
+			<input type="text" placeholder="Поиск">
+			<img src="<%= asset_path "search.png" %>" alt="" >
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="logo col-md-3 col-sm-3 col-xs-12">
 					<a href="/" title=""><img src="<%= asset_path "logo.png" %>" alt="Delizia - салон керамической плитки" /></a>
 				</div>
 				<div class="contacts text-center col-md-4 col-sm-offset-1 col-sm-4 col-xs-12">
-					<p>пр. Дзержинского, д.11, пом. 738</p>
-					<p>09 : 00 - 21 : 00 ПН. - ВС.</p>
+					<p>г. Минск пр. Дзержинского, 11</p>
+					<p>пн - пт 10:00 - 20:00</p>
+					<p>сб. 10:00 -  18:00</p>
 			  </div>
-				<div class="phones col-md-2 col-md-offset-1 col-sm-4 col-xs-12 text-right">
-					<p><a href="tel:+375172788866" title=""><span>+375 (17)</span> 278 88 66</a></p>
-					<p><a href="tel:+375296788866" title=""><span>+375 (29)</span> 678 88 66</a></p>
+				<div class="phones col-md-3 col-sm-4 col-xs-12 text-right">
+					<p><img src="<%= asset_path "tel.png" %>" alt="" width="13" height="13" class="viber" /><a href="tel:+375296788866" title="">+375 (29) 27 888 66</a></p>
+			    	<p><img src="<%= asset_path "velcom.png" %>" alt="" width="13" height="13" class="viber" /><a href="tel:+375296788866" title="">+375 (29) 67 888 66</a></p>
+					<p><img src="<%= asset_path "mts.png" %>" alt="" width="13" height="13" class="viber" /><a href="tel:+375296788866" title="">+375 (29) 59 888 66</a></p>
 			  </div>
 		  </div>
 		</div>
@@ -29,12 +35,22 @@
 						</div>
 						<div class="collapse navbar-collapse" id="navbar-collapse-1">
 							<ul>
-								<li><%=link_to "Каталог", "/catalog"%></li>
-								<li><%=link_to "О компании", "/about"%></li>
-								<li><%=link_to "Оплата и доставка", "/payment"%></li>
-								<li><%=link_to "Фабрики", "/factory"%></li>
-								<li><%=link_to "Акции", "/news"%></li>
-								<li><%=link_to "Контакты", "/contacts"%></li>
+                <li><%= link_to 'Главная', root_path %></li>
+								<li><%= link_to 'Каталог', catalog_index_path %>
+									<div class="podmenu" >
+										<ul>
+											<% Type.all.each do |type| %>
+												<li><%= link_to type.name, catalog_index_path(types: type.id) %></li>
+											<% end %>
+										</ul>
+									</div>
+								</li>
+                <li><%= link_to 'О компании', about_index_path %></li>
+								<li><a href="#" title="">Оплата и доставка</a></li>
+                <li><%= link_to 'Фабрики', factory_index_path %></li>
+								<li><a href="actions.html" title="">Акции</a></li>
+								<li><a href="actions.html" title="">Новости</a></li>
+                <li><%= link_to 'Контакты', contacts_path %></li>
 							</ul>
 						</div>
 					</nav>

@@ -1,78 +1,82 @@
-<div class="outerwrapper">
-	<!-- =header -->
-	
-	<!-- =/header -->
-
 	<!-- InstanceBeginEditable name="EditRegion3" -->
 	<!-- =owl -->
-	<div class="owl-carousel owl-theme" id="foo1">
-		<div><img src="<%= asset_path "slide-1.jpg" %>" alt="" /></div>
-		<div><img src="<%= asset_path "slide-2.jpg" %>" alt="" /></div>
-	</div>
-	<!-- =/owl -->
-	
-	<!-- =advantages -->
-	<section class="advantages text-center container">
-		<div class="row">
-			<div class="col-sm-3 col-xs-12">
-				<div class="circle"><img src="<%= asset_path "advantage-1.png" %>" alt="" /></div>
-				Бесплатная доставка
-			</div>
-			<div class="col-sm-3 col-xs-12">
-				<div class="circle"><img src="<%= asset_path "advantage-2.png" %>" alt="" /></div>
-				Более 150 коллекций от лучших итальянских фабрик
-			</div>
-			<div class="col-sm-3 col-xs-12">
-				<div class="circle"><img src="<%= asset_path "advantage-3.png" %>" alt="" /></div>
-				Оптимальное соотношение стоимости и качества
-			</div>
-			<div class="col-sm-3 col-xs-12">
-				<div class="circle"><img src="<%= asset_path "advantage-4.png" %>" alt="" /></div>
-				Можно купить одну плитку
+	<div>
+		<div class="owl-carousel owl-theme" id="foo1">
+			<div><img src="<%= asset_path "slide1.jpg" %>" alt="" /></div>
+			<div><img src="<%= asset_path "slide2.jpg" %>" alt="" /></div>
+		</div>
+		<div class="pop hidden-xs">
+			<div class="">
+				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_1 text-center">
+					<h2>viva gotha</h2>
+					<a href="">Подробнее</a>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_2 text-center">
+					<h2>viva gotha</h2>
+					<a href="">Подробнее</a>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_3 text-center">
+					<h2>viva gotha</h2>
+					<a href="">Подробнее</a>
+				</div>
 			</div>
 		</div>
-	</section>
-	<!-- =/advantages -->
-	<div class="line"></div>
+	</div>
+	<!-- =/owl -->
 
-	<!-- =actions -->
-	<section class="actions actions_home container">
-		<article class="item row">
-			<div class="col-sm-3 col-xs-4">
-				<img src="<%= asset_path "action.jpg" %>" alt="" class="img-responsive" />
+	<!-- текст на слайдере -->
+	<div class="info_slider hidden-xs">
+		<ul>
+			<li><img src="<%= asset_path "info_s_1.png" %>" alt="">Более 150 коллкуций  от лучших итальянских фабрик</li>
+			<li><img src="<%= asset_path "info_s_2.png" %>" alt="">Бесплатная доставка</li>
+		</ul>
+	</div>
+
+	<!-- популятрые коллекции -->
+	
+	<!-- owl брэндов -->
+	<div class="owl-carousel owl-theme" id="foo3">
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
+	</div>
+	<div class="container new_block">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<a href="">
+					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
+					<h3>Поступление новых коллекций</h3>
+					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
+				</a>	
+				<!-- <a href="" class="btn"> Подробнее</a> -->
+
 			</div>
-			<div class="col-sm-9 col-xs-8">
-				<h1>Поступление новых коллекций</h1>
-				<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-				<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<a href="">
+					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
+					<h3>Поступление новых коллекций</h3>
+					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
+				</a>		
+				<!-- <a href="" class="btn"> Подробнее</a> -->
+
 			</div>
-		</article>
-		<article class="item row">
-			<div class="col-sm-3 col-md-push-9 col-xs-4">
-				<img src="<%= asset_path "action.jpg" %>" alt="" class="img-responsive pull-right" />
+			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
+				<a href="">
+					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
+					<h3>Поступление новых коллекций</h3>
+					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
+				</a>	
+				<!-- <a href="" class="btn"> Подробнее</a> -->
+
 			</div>
-			<div class="col-sm-9 col-md-pull-3 col-xs-8">
-				<h1>Скидки в честь нового года</h1>
-				<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-				<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
-			</div>
-		</article>			
-		<article class="item row">
-			<div class="col-sm-3 col-xs-4">
-				<img src="<%= asset_path "action.jpg" %>" alt="" class="img-responsive" />
-			</div>
-			<div class="col-sm-9 col-xs-8">
-				<h1>Скидки в честь нового года</h1>
-				<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-				<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
-			</div>
-		</article>		
-	</section>
-	<!-- =/actions -->
-	<div class="line"></div>
+		</div>
+	</div>
 
 	<div class="container consultation-cat">
-		<!-- =consultation -->
 		<section class="consultation">
 			<div class="form">
 				<p class="title">Бесплатная консультация дизайнера</p>
@@ -85,55 +89,4 @@
 				</form>
 			</div>
 		</section>
-		<!-- =/consultation -->
-
-		<!-- =listCat -->
-		<section class="listCat text-center">
-			<header><h1>Новинки каталога</h1></header>
-			<div class="row">
-		          <% @collections.each do |g| %>	
-				<div class="col-sm-4 col-xs-12">
-				<% if g.images %>
-				  <%= image_tag(g.images.first.image.url(:big), :class => "img-responsive center-block") %>
-				<%else%>	
-				  <img src="tmp/cat.jpg" alt="" class="img-responsive center-block" />
-				<%end%>
-				<span><%= link_to g.name, catalog_path(g) %></span>
-			</div>
-		<%end%>
-			</div>
-			<p class="link"><%=link_to "Пеерейти к каталогу", "/catalog"%></p>
-		</section>
-		<!-- =/listCat -->		
-	</div>
-	<div class="line"></div>
-
-	<!-- =fabrics -->
-	<section class="listFabrics text-center container">
-		<header><h1>Фабрики, которые мы представляем</h1></header>
-		<div class="row">
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="item">
-					<a href="#" title=""><img src="<%= asset_path "viva.jpg" %>" alt="" /></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="item">
-					<a href="#" title=""><img src="<%= asset_path "ceramiche.png" %>" alt="" /></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="item">
-					<a href="#" title=""><img src="<%= asset_path "idea.jpg" %>" alt="" /></a>
-				</div>
-			</div>
-			<div class="col-md-3 col-sm-6 col-xs-12">
-				<div class="item">
-					<a href="#" title=""><img src="<%= asset_path "ceramiche.png" %>" alt="" /></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- =/fabrics -->
-    <!-- InstanceEndEditable -->
-</div>
+	</div>	

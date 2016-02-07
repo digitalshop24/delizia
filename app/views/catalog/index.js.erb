@@ -1,2 +1,10 @@
-$('.goods').append('<%= escape_javascript(render(:partial => "goods")) %>')
-
+//$('.goods').append('<%= escape_javascript(render(:partial => "goods")) %>')
+$('.goods').html('');
+$('.goods').append('<%= j render @goods %>');
+l = $('.load-more');
+console.log('<%= @show_more %>');
+<% if @show_more %>
+	l.removeClass('hidden');
+<% else %>
+	l.addClass('hidden');
+<% end %>
