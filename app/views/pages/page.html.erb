@@ -1,0 +1,19 @@
+<% content_for :meta do %>
+  <title><%= [@page.title, @page.name, @page.subname].find{|i| !i.to_s.empty? } %></title>
+  <meta name="description" content="<%= [@page.description, @page.subname, @page.content].find{|i| !i.to_s.empty? } %>" />
+<% end %>
+<div class="main">
+  <div class="container">
+    <main>
+      <% if @page.name %>
+        <h1 class="justifycenter"><%= @page.name %></h1>
+      <% end %>
+      <% if @page.image_file_name %>
+        <%= image_tag 'action.jpg', class: 'justifyleft' %>
+      <% end %>
+      <% if @page.content %>
+        <p><%= @page.content.split(/\r\n/).join('</p><br><p>').html_safe %></p>
+      <% end %>
+    </main>
+  </div>
+</div>

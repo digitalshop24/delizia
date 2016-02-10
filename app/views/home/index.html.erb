@@ -1,92 +1,70 @@
-	<!-- InstanceBeginEditable name="EditRegion3" -->
-	<!-- =owl -->
-	<div>
-		<div class="owl-carousel owl-theme" id="foo1">
-			<div><img src="<%= asset_path "slide1.jpg" %>" alt="" /></div>
-			<div><img src="<%= asset_path "slide2.jpg" %>" alt="" /></div>
-		</div>
-		<div class="pop hidden-xs">
-			<div class="">
-				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_1 text-center">
-					<h2>viva gotha</h2>
-					<a href="">Подробнее</a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_2 text-center">
-					<h2>viva gotha</h2>
-					<a href="">Подробнее</a>
-				</div>
-				<div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_3 text-center">
-					<h2>viva gotha</h2>
-					<a href="">Подробнее</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- =/owl -->
-
-	<!-- текст на слайдере -->
-	<div class="info_slider hidden-xs">
-		<ul>
-			<li><img src="<%= asset_path "info_s_1.png" %>" alt="">Более 150 коллкуций  от лучших итальянских фабрик</li>
-			<li><img src="<%= asset_path "info_s_2.png" %>" alt="">Бесплатная доставка</li>
-		</ul>
-	</div>
-
-	<!-- популятрые коллекции -->
-	
-	<!-- owl брэндов -->
-	<div class="owl-carousel owl-theme" id="foo3">
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-		<div class="text-center"><a href=""><img src="<%= asset_path "brand.jpg" %>" alt="" /></a></div>
-	</div>
-	<div class="container new_block">
-		<div class="row">
-			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-				<a href="">
-					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
-					<h3>Поступление новых коллекций</h3>
-					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
-				</a>	
-				<!-- <a href="" class="btn"> Подробнее</a> -->
-
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-				<a href="">
-					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
-					<h3>Поступление новых коллекций</h3>
-					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
-				</a>		
-				<!-- <a href="" class="btn"> Подробнее</a> -->
-
-			</div>
-			<div class="col-md-4 col-sm-4 col-xs-12 text-center">
-				<a href="">
-					<img src="<%= asset_path "new1.jpg" %>" alt="" class="img-responsive">
-					<h3>Поступление новых коллекций</h3>
-					<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. voluptas</p>
-				</a>	
-				<!-- <a href="" class="btn"> Подробнее</a> -->
-
-			</div>
-		</div>
-	</div>
-
-	<div class="container consultation-cat">
-		<section class="consultation">
-			<div class="form">
-				<p class="title">Бесплатная консультация дизайнера</p>
-				<form action="#" method="post">
-					<fieldset>
-						<input type="text" name="name" value="" placeholder="Ваше имя" />
-						<input type="text" name="tel" value="" placeholder="Контактный телефон" />
-						<input type="button" class="submit" value="Записаться" />
-					</fieldset>
-				</form>
-			</div>
-		</section>
-	</div>	
+<% content_for :meta do %>
+  <title>Delizia</title>
+<% end %>
+<div>
+  <div class="owl-carousel owl-theme" id="foo1">
+    <% @slider_images.each do |si| %>
+      <div><%= image_tag si.image.url(:slider) if si.image_file_name %></div>
+    <% end %>
+  </div>
+  <div class="pop hidden-xs">
+    <div class="">
+      <% @collections.each_with_index do |collection, i| %>
+        <div class="col-md-2 col-sm-2 col-xs-2 bg_pop bg_pop_<%= i+1 %> text-center" style="background-image:url(<%= collection.image.url(:medium) %>);">
+          <h2><%= collection.name %></h2>
+          <%= link_to 'Подробнее', catalog_path(collection) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- =/owl -->
+<!-- текст на слайдере -->
+<div class="info_slider hidden-xs">
+  <ul>
+    <li><img src="<%= asset_path "info_s_1.png" %>" alt="">Более 150 коллекций  от лучших итальянских фабрик</li>
+    <li><img src="<%= asset_path "info_s_2.png" %>" alt="">Бесплатная доставка</li>
+  </ul>
+</div>
+<!-- популятрые коллекции -->
+<!-- owl брэндов -->
+<div class="owl-carousel owl-theme" id="foo3">
+  <% Factory.all.each do |factory| %>
+    <% if factory.logo_file_name %>
+      <div class="text-center">
+        <%= link_to catalog_index_path(factories: factory.id) do %>
+          <%= image_tag factory.logo.url(:medium), width: 205 %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="container new_block">
+  <div class="row">
+    <% @news.each do |n| %>
+      <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+        <%= link_to news_path(n) do %>
+          <%= image_tag n.image.url(:medium) if n.image_file_name %>
+          <h3><%= n.head %></h3>
+          <p class="text-left"><%= n.short %></p>
+        <% end %>
+        <!-- <a href="" class="btn"> Подробнее</a> -->
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container consultation-cat">
+  <section class="consultation">
+    <div class="form">
+      <p class="title">Бесплатная консультация дизайнера</p>
+      <%= form_for @entry, remote: true do |f| %>
+        <fieldset>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <%= f.text_field :name, placeholder: 'Ваше имя' %>
+          <%= f.text_field :phone, placeholder: 'Контактный телефон' %>
+          <%= f.submit 'Записаться', class: 'submit' %>
+        </fieldset>
+      <% end %>
+    </div>
+  </section>
+</div>

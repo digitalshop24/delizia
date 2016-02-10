@@ -15,6 +15,7 @@
 
 //= require jquery.validate.min
 //= require bootstrap.min
+//= require modernizr
 //= require owl.carousel.min
 //= require jquery.formstyler.min
 //= require jquery-ui.min
@@ -22,7 +23,6 @@
 //= require jquery.fancybox.pack
 //= require engine
 //= require placeholders.min
-//= require modernizr
 
 $(document).ready(function () {
     // when the load more link is clicked

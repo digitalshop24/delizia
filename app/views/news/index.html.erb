@@ -1,51 +1,25 @@
-	<div class="main">
-		<!-- =actions -->
-		<h1 class="text-center">Акции</h1>
-		<section class="actions">
-			<div class="container">
-				<article class="item row">
-					<div class="col-sm-3 col-xs-4">
-						<img src="tmp/action.jpg" alt="" class="img-responsive" />
-					</div>
-					<div class="col-sm-9 col-xs-8">
-						<h2><a href="#" title="">Поступление новых коллекций</a></h2>
-						<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-						<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
-					</div>
-				</article>
-			</div>
-			<div class="line"></div>
-
-			<div class="container">
-				<article class="item row">
-					<div class="col-sm-3 col-md-push-9 col-xs-4">
-						<img src="tmp/action.jpg" alt="" class="img-responsive pull-right" />
-					</div>
-					<div class="col-sm-9 col-md-pull-3 col-xs-8">
-						<h2><a href="#" title="">Скидки в честь нового года</a></h2>
-						<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-						<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
-					</div>
-				</article>
-			</div>
-			<div class="line"></div>
-
-			<div class="container">
-				<article class="item row">
-					<div class="col-sm-3 col-xs-4">
-						<img src="tmp/action.jpg" alt="" class="img-responsive" />
-					</div>
-					<div class="col-sm-9 col-xs-8">
-						<h2><a href="#" title="">Скидки в честь нового года</a></h2>
-						<div class="text"><p>	Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. </p></div>
-						<p class="link"><a href="#" title="Подробнее">Подробнее</a></p>
-					</div>
-				</article>
-			</div>
-
-			<div class="text-center">
-				<a href="#" class="btn">Показать еще</a>
-			</div>
-		</section>
-		<!-- =/actions -->
-	</div>
+<% content_for :meta do %>
+  <title>Новости</title>
+<% end %>
+<div class="main">
+  <!-- =actions -->
+  <h1 class="text-center">Новости</h1>
+  <section class="actions">
+    <div id="news">
+      <%= render 'news' %>
+    </div>
+    <% if @show_more %>
+      <div class="text-center" id="show-more-news">
+        <%= link_to 'Показать еще', news_index_path, remote: true, class: 'btn load-more-news', page: 2 %>
+        <script>
+          $('.load-more-news').click(function() {
+            var page = parseInt($(this).attr('page'));
+            $(this).attr('href', '/news?page=' + page);
+            $(this).attr('page', page + 1);
+          });
+        </script>
+      </div>
+    <% end %>
+  </section>
+  <!-- =/actions -->
+</div>

@@ -16,16 +16,85 @@ $(document).ready(function(){
 		navigationText: ["", ""],
 		transitionStyle : "fade"
 	});
+	$('#foo3').owlCarousel({
+		items : 6,
+		pagination : false,
+		navigation : true,
+		navigationText: ["", ""],
+		transitionStyle : "fade"
+	});
+	$('#foo4').owlCarousel({
+		items : 2,
+		pagination : false,
+		navigation : true,
+		navigationText: ["", ""],
+		transitionStyle : "fade"
+	});
 
-	$('.consultation form .submit').click(function(e){
-		e.preventDefault();
-		$('.consultation').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>')
-	})
+	$("a#1").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#2").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#3").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#4").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#5").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#6").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#7").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#8").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#9").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#10").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#11").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#12").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#13").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#14").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#15").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#16").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#p1").fancybox({
+		'hideOnContentClick': true
+	});
+	$("a#p2").fancybox({
+		'hideOnContentClick': true
+	});
 
-	$('.feedback .form .submit').click(function(e){
-		e.preventDefault();
-		$('.feedback').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>')
-	})	
+	// $('.consultation form .submit').click(function(e){
+	// 	e.preventDefault();
+	// 	$('.consultation').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>')
+	// })
+
+	// $('.feedback .form .submit').click(function(e){
+	// 	e.preventDefault();
+	// 	$('.feedback').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>')
+	// })	
 
 	// select
 	$('#producer').styler({
@@ -38,6 +107,12 @@ $(document).ready(function(){
 
 	$('#appointment').styler({
 		selectPlaceholder : 'Назначение'
+	});
+	$('#buy').styler({
+		selectPlaceholder : 'Цена'
+	});
+	$('#size').styler({
+		selectPlaceholder : 'Размеры'
 	});
 
 

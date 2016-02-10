@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  priority: 1
+  min_width: 1.5
+  max_width: 1.5
+  min_length: 1.5
+  max_length: 1.5
+
+two:
+  name: MyString
+  priority: 1
+  min_width: 1.5
+  max_width: 1.5
+  min_length: 1.5
+  max_length: 1.5

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160121203701) do
+ActiveRecord::Schema.define(version: 20160210130734) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(version: 20160121203701) do
     t.boolean  "new"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.boolean  "home_page"
+    t.text     "content"
+    t.string   "title"
   end
 
   add_index "collections", ["factory_id"], name: "index_collections_on_factory_id", using: :btree
@@ -100,6 +103,14 @@ ActiveRecord::Schema.define(version: 20160121203701) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "entries", force: :cascade do |t|
+    t.string   "name"
+    t.string   "phone"
+    t.text     "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "factories", force: :cascade do |t|
     t.string   "name"
     t.string   "logo_file_name"
@@ -109,6 +120,17 @@ ActiveRecord::Schema.define(version: 20160121203701) do
     t.text     "description"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "filter_sizes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "priority"
+    t.float    "min_width"
+    t.float    "max_width"
+    t.float    "min_length"
+    t.float    "max_length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "galleries", force: :cascade do |t|
@@ -136,6 +158,46 @@ ActiveRecord::Schema.define(version: 20160121203701) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string   "head"
+    t.string   "short"
+    t.text     "middle"
+    t.text     "full"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "key",                null: false
+    t.string   "name"
+    t.string   "subname"
+    t.text     "content"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  create_table "sliders", force: :cascade do |t|
+    t.integer  "priority"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "surfaces", force: :cascade do |t|

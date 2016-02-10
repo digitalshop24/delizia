@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      page:
+        one: страница
+        other: Страницы
+        few: Страницы
+        many: Страницы 
+    attributes:
+      page:
+        name: Название
+        subname: Подзаголовок
+        content: Текст на странице
+        image: Изображение

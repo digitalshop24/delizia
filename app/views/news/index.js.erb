@@ -1,0 +1,4 @@
+$("#news").append('<%= j render "news" %>');
+<% unless @show_more %>
+  $('#show-more-news').remove();
+<% end %>

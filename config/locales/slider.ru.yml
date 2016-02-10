@@ -1,0 +1,13 @@
+ru:
+  activerecord:
+    models:
+      slider:
+        one: изображение для слайдера
+        other: Изображения для слайдера
+        few: Изображения для слайдера
+        many: Изображения для слайдера
+    attributes:
+      slider:
+        id: Номер
+        priority: Приоритет
+        image: Изображение

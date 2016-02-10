@@ -1,0 +1,17 @@
+<% @news.each_with_index do |news, i| %>
+  <div class="container">
+    <article class="item row">
+      <div class="col-sm-3 col-xs-4 <%= 'col-md-push-9' if i.odd? %>">
+        <%= image_tag news.image.url(:thumb), class: ("img-responsive" + (i.odd? ? ' pull-right' : '')) if news.image_file_name %>
+      </div>
+      <div class="col-sm-9 col-xs-8 <%= 'col-md-pull-3' if i.odd? %>" >
+        <h2><%= link_to news.head, news_path(news) %></h2>
+        <div class="text">
+          <p><%= news.middle %></p>
+        </div>
+        <p class="link"><%= link_to 'Подробнее', news_path(news), title: 'Подробнее' %></p>
+      </div>
+    </article>
+  </div>
+  <div class="<%= 'line' unless i == @news.length - 1 %>"></div>
+<% end %>

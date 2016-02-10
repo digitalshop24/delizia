@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      currency:
+        one: 'курс'
+        other: 'Курс'
+    attributes:
+      currency:
+        course: 'Курс'

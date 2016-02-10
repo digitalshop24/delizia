@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      entry:
+        one: 'заявка'
+        other: 'Заявки'
+        few: 'Заявки'
+        many: 'Заявки' 
+    attributes:
+      entry:
+        id: 'Номер'
+        name: 'Имя'
+        phone: 'Телефон'
+        message: 'Сообщение'

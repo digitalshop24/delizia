@@ -1,22 +1,12 @@
 ActiveAdmin.register Currency do
+  actions :all, except: [:new, :show, :destroy]
+  permit_params :course
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
- actions :all, :except => [:new]
- permit_params :course
- index do
-	 column :course
-	 actions
- end
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  before_filter :skip_sidebar!, only: :index
 
-
+  index do
+    column :course
+    actions
+  end
+  
 end

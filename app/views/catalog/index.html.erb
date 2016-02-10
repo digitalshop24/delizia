@@ -1,122 +1,34 @@
+<% content_for :meta do %>
+  <title>Каталог</title>
+<% end %>
 <!-- InstanceBeginEditable name="EditRegion3" -->
-	<div class="main">
-		<div class="container">
-			<div class="catalog">
-				<h1>Каталог</h1>
-				<!-- =filter -->
-			
-				<!-- =/filter -->
-
-				<!-- =goods -->
-				<div class="text-center row">
-				 <div class="col-md-3">
-				 	<%= form_tag catalog_index_path, method: :get, remote: true do %>
-				 		<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-
-						<div class="filt_p text-left">
-							<a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
-							  Производитель
-							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-							</a>
-							<div class="collapse" id="filter1">
-						  	<div class="well text-left">
-						  		<ul>
-						  			<% @factories.each do |f| %>
-                      <li><label><%= check_box_tag 'factories[]', f.id, f.id == params[:factories].to_i %> <%= f.name %><br></label></li>
-									  <% end %>
-						  		</ul>
-						 		</div>
-							</div>
-						</div>
-
-						<div class="filt_p text-left">
-							<a class="" role="button" data-toggle="collapse" href="#filter2" aria-expanded="false" aria-controls="filter2">
-							  Тип помещения
-							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-							</a>
-							<div class="collapse" id="filter2">
-							  	<div class="well text-left">
-							  		<ul>
-							  			<% @types.each do |type| %>
-									      <li><label><%= check_box_tag 'types[]', type.id, type.id == params[:types].to_i %> <%=type.name%><br></label></li>
-											<% end %>
-							  		</ul>
-							 	</div>
-							</div>
-						</div>
-
-						<div class="filt_p text-left">
-							<a class="" role="button" data-toggle="collapse" href="#filter3" aria-expanded="false" aria-controls="filter3">
-							  Назначение
-							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-							</a>
-							<div class="collapse" id="filter3">
-							  	<div class="well text-left">
-							  		<ul>
-							  			<% @zones.each do |zone| %>
-                        <li><label><%= check_box_tag 'zones[]', zone.id %> <%= zone.name %><br></label></li>
-									    <% end %>
-							  		</ul>
-							 	</div>
-							</div>
-						</div>
-
-						<div class="filt_p text-left">
-							<a class="" role="button" data-toggle="collapse" href="#filter4" aria-expanded="false" aria-controls="filter4">
-							  Цена
-							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-							</a>
-							<div class="collapse" id="filter4">
-							  	<div class="well">
-							  		<ul>
-							  			<li><label><input type="radio" name="price" value="0-200"> до 200</label><Br></li>
-										  <li><label><input type="radio" name="price" value="200-500"> 200-500</label><Br></li>
-										  <li><label><input type="radio" name="price" value="500-999999"> больше 500</label><Br></li>
-							  		</ul>
-							 	</div>
-							</div>
-						</div>
-
-						<div class="filt_p text-left">
-							<a class="" role="button" data-toggle="collapse" href="#filter5" aria-expanded="false" aria-controls="filter5">
-							  Размеры
-							  <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-							</a>
-							<div class="collapse" id="filter5">
-							  	<div class="well">
-							  		<ul>
-                      <% @sizes.each do |size| %>
-                        <li><label>
-                          <%= check_box_tag 'sizes[]', "#{size[0]}X#{size[1]}" %> <%= "#{size[0]}X#{size[1]}" %><br>
-                        </label></li> 
-							  			<% end %>
-							  		</ul>
-							 	</div>
-							</div>
-						</div>
-
-						<div class="filt_p text-left">
-              <%= hidden_field_tag 'pages', 1, id: 'pages_number' %>
-							<%= submit_tag "Применить фильтр", class: "btn", onclick: '$("#pages_number").val(1)' %>
-						</div>
-
-					
-  				 </div>
-  					<div class="col-md-9">
-    					  <div class="goods row">
-  					    	<%= render @goods %>
-  				      </div>
-  				    </div>	
-  				  </div>
-  				<!-- =/goods -->
-  				<div class="text-center load-more-container">
-  	        		<!-- hide our loading gif image so that we show it when making ajax call via jquery -->
-  					<%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
-  					<%= submit_tag "Показать еще", class: "btn load-more hidden", onclick: '$("#pages_number").val(+$("#pages_number").val()+1)' %>
-            <% if @show_more %><script>$('.load-more').removeClass('hidden')</script><% end %>
-  				</div>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	<!-- InstanceEndEditable -->
+<div class="main">
+  <div class="container">
+    <div class="catalog">
+      <h1>Каталог</h1>
+      <!-- =filter -->
+      <!-- =/filter -->
+      <!-- =goods -->
+      <div class="text-center row">
+        <div class="col-md-3">
+          <%= render partial: 'filter_form', locals: {remote: true} %>
+        </div>
+        <div class="col-md-9">
+          <div class="goods row">
+            <%= render @goods %>
+          </div>
+          <div class="text-center load-more-container">
+            <!-- hide our loading gif image so that we show it when making ajax call via jquery -->
+            <%= image_tag "ajax-loader.gif", style: "display:none;", class: "loading-gif" %>
+            <%= submit_tag "Показать еще", class: "btn load-more hidden", form: 'filter_form', onclick: '$("#pages_number").val(+$("#pages_number").val()+1)' %>
+            <% if @show_more %><script>
+                $('.load-more').removeClass('hidden')
+              </script><% end %>
+          </div>
+        </div>
+      </div>
+      <!-- =/goods -->
+    </div>
+  </div>
+</div>
+<!-- InstanceEndEditable -->

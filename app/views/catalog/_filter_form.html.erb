@@ -1,0 +1,82 @@
+<%= form_tag filter_path, remote: remote, id: 'filter_form' do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
+      Производитель <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter1">
+      <div class="well text-left">
+        <ul>
+          <% @factories.each do |f| %>
+            <li><label><%= check_box_tag 'factories[]', f.id, ([]<<params[:factories]).flatten.include?(f.id.to_s) %> <%= f.name %><br>
+              </label></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter2" aria-expanded="false" aria-controls="filter2">
+      Тип помещения <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter2">
+      <div class="well text-left">
+        <ul>
+          <% @types.each do |type| %>
+            <li><label><%= check_box_tag 'types[]', type.id, ([]<<params[:types]).flatten.include?(type.id.to_s) %> <%=type.name%><br>
+              </label></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter3" aria-expanded="false" aria-controls="filter3">
+      Назначение <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter3">
+      <div class="well text-left">
+        <ul>
+          <% @zones.each do |zone| %>
+            <li><label><%= check_box_tag 'zones[]', zone.id, ([]<<params[:zones]).flatten.include?(zone.id.to_s) %> <%= zone.name %><br>
+              </label></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter4" aria-expanded="false" aria-controls="filter4">
+      Цена <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter4">
+      <div class="well">
+        <ul>
+          <% @prices.each do |price| %>
+            <li><label><%= radio_button_tag :price, price.first, params[:price] == price.first %> <%= price.second %></label><br></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter5" aria-expanded="false" aria-controls="filter5">
+      Размеры <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter5">
+      <div class="well">
+        <ul>
+          <% @sizes.each do |size| %>
+            <li><label>
+                <%= check_box_tag 'sizes[]', size.id, ([]<<params[:sizes]).flatten.include?(size.id.to_s) %> <%= size.name %><br>
+              </label></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <%= hidden_field_tag 'pages', 1, id: 'pages_number' %>
+    <%= submit_tag "Применить фильтр", class: "btn", onclick: '$("#pages_number").val(1)' %>
+  </div>
+<% end %>

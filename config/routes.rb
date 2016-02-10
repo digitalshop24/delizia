@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
+  delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
   get 'admin/images/:id/:object_type/:object_id', to: 'images#preview', as: :preview_image
 	# The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -9,12 +9,19 @@ delete 'admin/images/:id', to: 'images#destroy', as: :destroy_image
   # You can have the root of your site routed with "root"
   root 'home#index'
   # get 'catalog/filter', to: 'catalog#filter', as: :catalog_filter
-  resources :about
+  # resources :about
+  get 'about', to: 'pages#about', as: :about
+  get 'delivery', to: 'pages#delivery', as: :delivery
+  get 'dealers', to: 'pages#dealers', as: :dealers
+  get 'contacts', to: 'pages#contacts', as: :contacts
+
+  get 'search', to: 'catalog#search', as: :search
+  post 'catalog/filter', to: 'catalog#index', as: :filter
   resources :catalog
   resources :factory
-  resources :payment
-  resources :news
-  resources :contacts
+  # resources :payment
+  resources :news, only: [:index, :show]
+  resources :entries, only: :create
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

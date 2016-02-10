@@ -1,47 +1,35 @@
 <!DOCTYPE HTML>
 <html><!-- InstanceBegin template="/Templates/homepage.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-
-<!--<meta name="robots" content="noindex,nofollow" />-->
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Главная</title>
-<!-- InstanceEndEditable -->
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>  
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-	<link href="css/styles-ie.css" rel="stylesheet" type="text/css" />
-<![endif]-->
-
-<!--[if lt IE 9]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<!--[if (gte IE 5.5)&(lte IE 8)]>
-	<link href="css/styles-ie8.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="js/selectivizr.js"></script>
-<![endif]-->
-
-<!--[if lte IE 6]>
-	<meta http-equiv="refresh" content="0; url=http://yoursite.com/ie6/ie6.html"> 	
-<![endif]-->
-
-
-<!-- InstanceBeginEditable name="head" -->
-<!-- InstanceEndEditable -->
-</head>
-<body>
-<div class="outerwrapper">
-<%= render partial: "layouts/header" %>
-<%= yield %>
-</div>
-<%= render partial: "layouts/footer" %>
-
-
-</body>
-<!-- InstanceEnd --></html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <%= yield :meta %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <!--[if IE]>
+      <link href="css/styles-ie.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if (gte IE 5.5)&(lte IE 8)]>
+      <link href="css/styles-ie8.css" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="js/selectivizr.js"></script>
+    <![endif]-->
+    <!--[if lte IE 6]>
+      <meta http-equiv="refresh" content="0; url=http://yoursite.com/ie6/ie6.html">
+    <![endif]-->
+  </head>
+  <body>
+    <div class="outerwrapper">
+      <%= render partial: "layouts/header" %>
+      <%= yield %>
+    </div>
+    <%= render partial: "layouts/footer" %>
+    <% javascript_include_tag 'owl.carousel.min.js' %>
+  </body>
+  <!-- InstanceEnd -->
+</html>

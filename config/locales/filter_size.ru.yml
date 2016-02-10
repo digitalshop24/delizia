@@ -1,0 +1,17 @@
+ru:
+  activerecord:
+    models:
+      filter_size:
+        one: 'размер'
+        other: 'Размеры для фильтра'
+        few: 'Размеры для фильтра'
+        many: 'Размеры для фильтра' 
+    attributes:
+      filter_size:
+        id: 'Номер'
+        name: 'Отображать как'
+        priority: 'Приоритет'
+        min_width: 'Мин. ширина'
+        max_width: 'Макс. ширина'
+        min_length: 'Мин. длина'
+        max_length: 'Макс. длина'

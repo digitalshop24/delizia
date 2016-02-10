@@ -1,0 +1,2 @@
+$('.consultation').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>');
+$('.feedback').html('<div class="thank"><p class="thank-title">Ваша заявка принята!</p><p>Совсем скоро с Вами свяжется наш консультант.</p></div>');
