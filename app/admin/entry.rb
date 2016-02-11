@@ -1,4 +1,5 @@
 ActiveAdmin.register Entry do
+  menu :priority => 5
   actions :all, except: [:new, :show, :edit]
 
   filter :created_at

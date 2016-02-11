@@ -3,12 +3,18 @@ ActiveAdmin.setup do |config|
   #
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
-  
-	config.comments = false
-	config.site_title = "Delizia"
+  config.namespace :admin do |admin|
+    admin.build_menu do |menu|
+      menu.add label: 'Каталог', priority: 0
+    end
+  end
+
+  config.root_to = 'collections#index'
+  config.comments = false
+  config.site_title = "Delizia"
   config.before_filter :set_admin_locale
   config.site_title_image = "http://dshop24.ru/images/logo.png"
-	# Set the link url for the title. For example, to take
+  # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
   #
   # config.site_title_link = "/"

@@ -1,6 +1,7 @@
 app_name = 'delizia'
 
 set :repo_url, "git@github.com:digitalshop24/#{app_name}.git"
+set :ssh_options, { :forward_agent => true }
 set :application, app_name
 application = app_name
 set :rvm_type, :user

@@ -1,5 +1,5 @@
 ActiveAdmin.register Collection do
-  menu :priority => 3
+  menu parent: "Каталог", priority: 1
 
   permit_params  :new, :factory_id, :name, :description, :slider_image, :slider, :home_page, images: [], type_ids: [], zone_ids: [], material_ids: []
   filter :name

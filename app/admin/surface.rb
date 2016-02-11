@@ -1,6 +1,7 @@
 ActiveAdmin.register Surface do
   filter :name
   permit_params :name
+  menu parent: "Каталог", priority: 6
   
   index do
     selectable_column

@@ -1,0 +1,15 @@
+ru:
+  activerecord:
+    models:
+      news:
+        one: 'новость'
+        other: 'Новости'
+        few: 'Новости'
+        many: 'Новости'  
+    attributes:
+      news:
+        head: 'Заголовок'
+        image: 'Изображениe'
+        short: 'Краткая новость'
+        middle: 'Средняя новость'
+        full: 'Полная новость'

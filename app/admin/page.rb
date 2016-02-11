@@ -1,4 +1,5 @@
 ActiveAdmin.register Page do
+  menu :priority => 3
   permit_params :name, :subname, :content, :image, :title, :description
   actions :all, except: [:new, :destroy]
 

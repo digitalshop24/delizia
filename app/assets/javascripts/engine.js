@@ -79,12 +79,12 @@ $(document).ready(function(){
 	$("a#16").fancybox({
 		'hideOnContentClick': true
 	});
-	$("a#p1").fancybox({
+	$("a.fancy_product").fancybox({
 		'hideOnContentClick': true
 	});
-	$("a#p2").fancybox({
-		'hideOnContentClick': true
-	});
+	// $("a#p2").fancybox({
+	// 	'hideOnContentClick': true
+	// });
 
 	// $('.consultation form .submit').click(function(e){
 	// 	e.preventDefault();

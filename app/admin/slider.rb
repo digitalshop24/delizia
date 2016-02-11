@@ -1,4 +1,5 @@
 ActiveAdmin.register Slider do
+  menu :priority => 8
   permit_params :priority, :image
 
   index do

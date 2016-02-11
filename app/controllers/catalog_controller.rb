@@ -8,10 +8,11 @@ class CatalogController < ApplicationController
     @types = Type.all
     @sizes = FilterSize.all.order(priority: :desc)
     @prices = [
-      ['0-9999999999', 'любая'],
-      ['0-200000', 'до 200 тыс.'],
-      ['200000-500000', '200-500 тыс.'],
-      ['500000-9999999999', 'от 500 тыс.']
+      ['0-9_999_999_999', 'любая'],
+      ['0-500_000', 'до 500 тысяч'],
+      ['500_000-1_000_000', 'от 500 до 1 млн.'],
+      ['1_000_000-1_500_000', 'от 1 до 1,5 млн.'],
+      ['1_500_000-9_999_999_999', 'более 1,5 млн.']
     ]
   end
 
@@ -30,7 +31,7 @@ class CatalogController < ApplicationController
         sizes = FilterSize.where(id: params[:sizes])
         widthes = sizes.map{|s| "(tiles.width BETWEEN #{s.min_width} AND #{s.max_width})"}.join(" OR ")
         lengthes = sizes.map{|s| "(tiles.length BETWEEN #{s.min_length} AND #{s.max_length})"}.join(" OR ")
-        @goods = @goods.joins(:tiles).where("(#{widthes}) AND (#{lengthes})").group('collections.id')
+        @goods = @goods.joins(:tiles).where("(#{widthes}) AND (#{lengthes})")
       end
       if params[:price]
         course = Currency.last.course.to_i
@@ -38,6 +39,7 @@ class CatalogController < ApplicationController
         @goods = @goods.joins(:tiles).where('tiles.price BETWEEN ? AND ?', price_min, price_max)
       end
     end
+    @goods = @goods.group("collections.id")
     number = Collection::PER_PAGE * (params[:pages] ? params[:pages].to_i : 1)
     c = @goods.count.kind_of?(Fixnum) ? @goods.count : @goods.count.count
     @show_more = c > number

@@ -1,6 +1,7 @@
 ActiveAdmin.register Material do
   filter :name
   permit_params :name
+  menu parent: "Каталог", priority: 5
 
   index do
     selectable_column

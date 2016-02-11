@@ -1,6 +1,7 @@
 ActiveAdmin.register Zone do
   filter :name
   permit_params :name
+  menu parent: "Каталог", priority: 4
 
   index do
     selectable_column

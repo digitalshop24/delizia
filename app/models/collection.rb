@@ -1,5 +1,5 @@
 class Collection < ActiveRecord::Base
-  PER_PAGE = 9
+  PER_PAGE = 15
   # default_scope { order('collections.created_at DESC') }
   belongs_to :factory
   has_many :tiles

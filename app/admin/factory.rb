@@ -1,5 +1,6 @@
 ActiveAdmin.register Factory do
-  menu :priority => 4
+  menu parent: "Каталог", priority: 2
+  
   filter :name
   permit_params :name, :logo, :description
   index do
@@ -31,5 +32,4 @@ ActiveAdmin.register Factory do
       row :description
     end
   end
-
 end

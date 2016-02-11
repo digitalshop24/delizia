@@ -1,6 +1,7 @@
 ActiveAdmin.register FilterSize do
- permit_params :name, :priority, :min_width, :max_width, :min_length, :max_length
- filter :name
+  menu :priority => 6
+  permit_params :name, :priority, :min_width, :max_width, :min_length, :max_length
+  filter :name
   index do
     selectable_column
     column :name
