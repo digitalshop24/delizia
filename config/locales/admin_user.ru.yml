@@ -8,6 +8,8 @@ ru:
     models:
       admin_user:
         one: админа
+        few: Админы
+        many: Админы
         other: Админы
     attributes:
       admin_user:

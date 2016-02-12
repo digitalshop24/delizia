@@ -14,8 +14,6 @@
 			<p class="value"><%=tile.surface.name if tile.surface%></p>
 			<p>Цена: </p>
 			<p class="value"><%=(tile.price.to_i*(@course.to_i)).to_s%> м2</p>
-			<p class="value"><%=(tile.compose_price.to_i*@course.to_i).to_s%> композиция</p>
-			<p class="value"><%=(tile.single_price.to_i*@course.to_i).to_s%> шт.</p>
 		</div>
 	</div>
 	</div>

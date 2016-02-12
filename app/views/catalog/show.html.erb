@@ -15,8 +15,8 @@
             <div id="foo2" class="owl-carousel owl-theme">
               <% @good.images.each do |image| %>
                 <div>
-                  <%= link_to image.image.url(:big), class: "fancy_product" do %>
-                    <%= image_tag image.image.url(:big), class: 'img-responsive' if image.image_file_name %>
+                  <%= link_to image.image.url, class: "gallery", rel: 'group' do %>
+                    <%= image_tag image.image.url(:medium), class: 'img-responsive' if image.image_file_name %>
                   <% end %>
                   <p class="slider-title"><%=@good.name%></p>
                 </div>

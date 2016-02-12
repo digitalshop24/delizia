@@ -12,6 +12,7 @@ ru:
         name: 'Название'
         description: 'Описание'
         new: 'Новинка'
+        home_page: 'Отображать на главной'
         images: 'Изображения'
         factory: 'Фабрика'
         type: 'Тип'

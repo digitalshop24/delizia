@@ -31,57 +31,8 @@ $(document).ready(function(){
 		transitionStyle : "fade"
 	});
 
-	$("a#1").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#2").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#3").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#4").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#5").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#6").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#7").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#8").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#9").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#10").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#11").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#12").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#13").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#14").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#15").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a#16").fancybox({
-		'hideOnContentClick': true
-	});
-	$("a.fancy_product").fancybox({
-		'hideOnContentClick': true
-	});
+	$("a.gallery").fancybox();
+	$("a.gallery2").fancybox();
 	// $("a#p2").fancybox({
 	// 	'hideOnContentClick': true
 	// });

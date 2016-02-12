@@ -11,7 +11,7 @@ class Collection < ActiveRecord::Base
   include Galleryable
   has_one :gallery, as: :galleryable, dependent: :destroy
   has_attached_file :image,
-    styles: { thumb: "200x200>", medium: "500x500>", big: "1000x1000>" }
+    styles: { thumb: "200x200>", catalog: '350x250>', medium: "500x500>", big: "1000x1000>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   after_save :set_preview
 

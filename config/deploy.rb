@@ -72,7 +72,7 @@ namespace :deploy do
   desc 'Create symlink'
   task :symlink do
     on roles(:all) do
-      execute "ln -s #{shared_path}/system #{release_path}/public/system"
+      execute "ln -s #{shared_path}/system #{release_path}/public"
      #execute "ln -s #{shared_path}/config/application.yml #{release_path}/config/application.yml"
     end
   end
