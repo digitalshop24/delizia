@@ -5,7 +5,8 @@ $(document).ready(function(){
 		pagination : false,
 		navigation : true,
 		singleItem : true,
-		navigationText: ["", ""]
+		navigationText: ["", ""],
+		autoPlay: 3000
 	});
 
 	$('#foo2').owlCarousel({

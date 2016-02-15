@@ -11,13 +11,13 @@
         <article class="item row">
           <div class="col-md-2 col-sm-3 col-xs-3">
             <div class="pic">
-              <%= image_tag(f.logo.url(:medium), :class => "img-responsive") if f.logo%>
+              <%= image_tag(f.logo.url(:medium), class: "img-responsive") if f.logo%>
             </div>
           </div>
           <div class="col-md-10 col-sm-9 col-xs-9">
-            <h2><a href="#" title=""><%=f.name%></a></h2>
+            <h2><%= link_to f.name, catalog_index_path({ factories: f.id }) %></h2>
             <div class="text">
-              <p><%=f.description%></p>
+              <p><%= f.description %></p>
             </div>
           </div>
           <!-- =listCat -->
@@ -26,7 +26,7 @@
               <%f.collections.first(3).each do |c| %>
                 <%= link_to "/catalog/#{c.id}" do %>
                   <div class="col-sm-4 col-xs-12">
-                    <%= image_tag(c.image.url(:medium), :class => "img-responsive") if f.logo%>
+                    <%= image_tag(c.image.url(:medium), class: "img-responsive") if f.logo%>
                     <h3><%= c.name %></h3>
                   </div>
                 <%end%>
