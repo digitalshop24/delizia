@@ -18,4 +18,6 @@ Rails.application.routes.draw do
   resources :factory
   resources :news, only: [:index, :show]
   resources :entries, only: :create
+
+  get 'stat', to: 'home#stat', as: :stat
 end
