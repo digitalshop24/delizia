@@ -1,21 +1,6 @@
 <%= form_tag filter_path, remote: remote, id: 'filter_form' do %>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <div class="filt_p text-left">
-    <a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
-      Производитель <img src="<%= asset_path "arrows_filter.png" %>" alt="">
-    </a>
-    <div class="collapse" id="filter1">
-      <div class="well text-left">
-        <ul>
-          <% @factories.each do |f| %>
-            <li><label><%= check_box_tag 'factories[]', f.id, ([]<<params[:factories]).flatten.include?(f.id.to_s) %> <%= f.name %><br>
-              </label></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="filt_p text-left">
     <a class="" role="button" data-toggle="collapse" href="#filter2" aria-expanded="false" aria-controls="filter2">
       Тип помещения <img src="<%= asset_path "arrows_filter.png" %>" alt="">
     </a>
@@ -53,7 +38,8 @@
       <div class="well">
         <ul>
           <% @prices.each do |price| %>
-            <li><label><%= radio_button_tag :price, price.first, params[:price] == price.first %> <%= price.second %></label><br></li>
+            <li><label><%= radio_button_tag :price, price.first, params[:price] == price.first %> <%= price.second %></label><br>
+            </li>
           <% end %>
         </ul>
       </div>
@@ -69,6 +55,21 @@
           <% @sizes.each do |size| %>
             <li><label>
                 <%= check_box_tag 'sizes[]', size.id, ([]<<params[:sizes]).flatten.include?(size.id.to_s) %> <%= size.name %><br>
+              </label></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="filt_p text-left">
+    <a class="" role="button" data-toggle="collapse" href="#filter1" aria-expanded="false" aria-controls="filter1">
+      Производитель <img src="<%= asset_path "arrows_filter.png" %>" alt="">
+    </a>
+    <div class="collapse" id="filter1">
+      <div class="well text-left">
+        <ul>
+          <% @factories.each do |f| %>
+            <li><label><%= check_box_tag 'factories[]', f.id, ([]<<params[:factories]).flatten.include?(f.id.to_s) %> <%= f.name %><br>
               </label></li>
           <% end %>
         </ul>

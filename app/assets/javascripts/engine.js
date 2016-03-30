@@ -103,5 +103,7 @@ $(document).ready(function(){
 			document.body.appendChild(IEhelp);
 		}
 	}
+
+	$('#filter2,#filter3').collapse('show');
 	// =/заглушка для IE		
 })
