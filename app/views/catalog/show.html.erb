@@ -1,6 +1,6 @@
 <% content_for :meta do %>
-  <title><%= @good.name %></title>
-  <meta name="description" content="<%= @good.description %>" />
+  <title><%= [@good.title, @good.name].find{|i| !i.to_s.empty? } %></title>
+  <meta name="description" content="<%= [@good.description, @good.content].find{|i| !i.to_s.empty? } %>" />
 <% end %>
 <div class="main">
   <div class="container">
@@ -53,7 +53,7 @@
             </tr>
           </table>
           <div class="text" style="word-wrap: break-word;">
-            <p><%=@good.description%></p>
+            <p><%=@good.content %></p>
           </div>
         </div>
       </div>

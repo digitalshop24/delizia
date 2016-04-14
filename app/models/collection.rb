@@ -17,7 +17,7 @@ class Collection < ActiveRecord::Base
 
   def set_preview
     unless image_file_name
-      images.first.as_preview(self) if images
+      images.first.as_preview(self) if (images && images.first)
     end
   end
 end

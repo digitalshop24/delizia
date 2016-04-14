@@ -10,7 +10,7 @@ ru:
       collection:
         id: 'Номер'
         name: 'Название'
-        description: 'Описание'
+        content: 'Описание'
         new: 'Новинка'
         home_page: 'Отображать на главной'
         images: 'Изображения'

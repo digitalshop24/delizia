@@ -1,7 +1,7 @@
 ActiveAdmin.register Collection do
   menu parent: "Каталог", priority: 1
 
-  permit_params  :new, :factory_id, :name, :description, :slider_image, :slider, :home_page, images: [], type_ids: [], zone_ids: [], material_ids: []
+  permit_params  :new, :factory_id, :name, :content, :title, :description, :slider_image, :slider, :home_page, images: [], type_ids: [], zone_ids: [], material_ids: []
   filter :name
   filter :factory
   filter :type
@@ -28,20 +28,22 @@ ActiveAdmin.register Collection do
           render(partial: 'images/images_with_preview', locals: { object: f.object, page: 'edit' })
         end
       end
-      f.input :description
+      f.input :content
       f.input :factory
       f.input :types, as: :check_boxes , collection: Type.all, member_label: Proc.new { |pr| "#{pr.name}" }
       f.input :zones, as: :check_boxes
       f.input :materials, as: :check_boxes
       f.input :new
       f.input :home_page
+      f.input :title
+      f.input :description
     end
     f.actions
   end
   show do |collection|
     attributes_table do
       row :name
-      row :description
+      row :content
       row :new
       row :home_page
       row :images do
@@ -68,7 +70,8 @@ ActiveAdmin.register Collection do
           end
         end
       end
-
+      row :title
+      row :description
     end
   end
 end
