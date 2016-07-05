@@ -2,19 +2,6 @@ class CatalogController < ApplicationController
 
   before_action :set_all, only: [:filter, :index, :show, :search]
 
-  def set_all
-    @factories = Factory.all
-    @zones = Zone.all
-    @types = Type.all
-    @sizes = FilterSize.all.order(priority: :desc)
-    @prices = [
-      ['1_000_000-2_000_000', 'от 1 млн до 2 млн'],
-      ['2_000_000-3_000_000', 'от 2 млн до 3 млн'],
-      ['3_000_000-9_999_999_999', 'от 3 млн и более'],
-      ['0-9_999_999_999', 'любая']
-    ]
-  end
-
   def search
     @goods = Collection.where('lower(name) LIKE lower(:query) OR lower(title) LIKE lower(:query)', query: "%#{params[:query]}%")
     render :index

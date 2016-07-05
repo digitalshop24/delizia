@@ -1,7 +1,7 @@
 ActiveAdmin.register Collection do
   menu parent: "Каталог", priority: 1
 
-  permit_params  :new, :factory_id, :name, :content, :title, :description, :slider_image, :slider, :home_page, images: [], type_ids: [], zone_ids: [], material_ids: []
+  permit_params  :new, :factory_id, :name, :content, :title, :description, :slider_image, :slider, :home_page, images: [], tag_ids: [], type_ids: [], zone_ids: [], material_ids: []
   filter :name
   filter :factory
   filter :type
@@ -33,6 +33,7 @@ ActiveAdmin.register Collection do
       f.input :types, as: :check_boxes , collection: Type.all, member_label: Proc.new { |pr| "#{pr.name}" }
       f.input :zones, as: :check_boxes
       f.input :materials, as: :check_boxes
+      f.input :tags
       f.input :new
       f.input :home_page
       f.input :title
@@ -69,6 +70,11 @@ ActiveAdmin.register Collection do
             link_to material.name, admin_material_path(material.id)
           end
         end
+      end
+      row :tags do |c|
+        c.tags.map do |tag|
+          link_to(tag.name, admin_tag_path(tag.id))
+        end.join(', ').html_safe
       end
       row :title
       row :description

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210130734) do
+ActiveRecord::Schema.define(version: 20160705103146) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,14 @@ ActiveRecord::Schema.define(version: 20160210130734) do
 
   add_index "collections_materials", ["collection_id"], name: "index_collections_materials_on_collection_id", using: :btree
   add_index "collections_materials", ["material_id"], name: "index_collections_materials_on_material_id", using: :btree
+
+  create_table "collections_tags", id: false, force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "tag_id"
+  end
+
+  add_index "collections_tags", ["collection_id"], name: "index_collections_tags_on_collection_id", using: :btree
+  add_index "collections_tags", ["tag_id"], name: "index_collections_tags_on_tag_id", using: :btree
 
   create_table "collections_types", force: :cascade do |t|
     t.integer "type_id"
@@ -205,6 +213,19 @@ ActiveRecord::Schema.define(version: 20160210130734) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "url"
+    t.text     "text"
+    t.string   "title"
+    t.string   "description"
+    t.string   "keywords"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "tags", ["url"], name: "index_tags_on_url", using: :btree
 
   create_table "tiles", force: :cascade do |t|
     t.integer  "amount_id"

@@ -1,0 +1,33 @@
+<% content_for :meta do %>
+  <title><%= [@tag.title, @tag.name, @tag.url].find{ |i| !i.to_s.empty? } %></title>
+  <% desc = [@tag.description, @tag.text].find{ |i| !i.to_s.empty? } %>
+  <% if desc.present? %>
+    <meta name="description" content="<%= desc %>">
+  <% end %>
+  <% if @tag.keywords.present? %>
+    <meta name="keywords" content="<%= @tag.keywords %>">
+  <% end %>
+<% end %>
+
+<div class="main">
+  <div class="container">
+    <div class="catalog">
+      <h1><%= @tag.name %></h1>
+      <div class="text-center row">
+        <div class="col-md-3">
+          <%= render partial: 'catalog/filter_form', locals: { remote: false } %>
+        </div>
+        <div class="col-md-9">
+          <div class="goods row">
+            <%= render @tag.collections %>
+          </div>
+          <div class="text-left">
+            <%= @tag.text %>
+          </div>
+        </div>
+      </div>
+      <!-- =/goods -->
+    </div>
+  </div>
+</div>
+<!-- InstanceEndEditable -->

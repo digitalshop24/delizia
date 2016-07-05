@@ -1,0 +1,14 @@
+ru:
+  activerecord:
+    models:
+      tag:
+        one: 'тег'
+        other: 'Теги'
+        few: 'Теги'
+        many: 'Теги'
+    attributes:
+      tag:
+        id: 'Номер'
+        name: 'Название'
+        text: 'Описание'
+        collections: 'Коллекции'

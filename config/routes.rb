@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   resources :factory
   resources :news, only: [:index, :show]
   resources :entries, only: :create
+  resources :tags, only: [:index] do
+    collection do
+      get ':url', to: 'tags#show'
+    end
+  end
 
   get 'stat', to: 'home#stat', as: :stat
 end
