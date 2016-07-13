@@ -6,7 +6,7 @@ class TagsController < ApplicationController
     if @tag
       render :show
     else
-      render file: "#{Rails.root}/public/404", layout: false, status: 404
+    	raise ActionController::RoutingError.new('Not Found')
     end
   end
 end

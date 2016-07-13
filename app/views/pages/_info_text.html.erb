@@ -1,0 +1,14 @@
+<div class="page-data">
+  <div class="page-info-text text-left">
+    <%= @page[field].to_s.html_safe %>
+  </div>
+  <% if current_admin_user %>
+    <div class="page-text-form" style="display: none;">
+      <%= form_for @page do |f| %>
+        <%= f.text_area field, class: 'form-control', rows: 5 %>
+        <%= f.submit 'Сохранить', class: 'btn' %>
+      <% end %>
+    </div>
+    <span class="edit-sym">&#x2710;</span>    
+  <% end %>
+</div>

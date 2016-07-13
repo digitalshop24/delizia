@@ -1,7 +1,3 @@
-<% content_for :meta do %>
-  <title><%= [@page.title, @page.name, @page.subname].find{|i| !i.to_s.empty? } %></title>
-  <meta name="description" content="<%= [@page.description, @page.subname, @page.content].find{|i| !i.to_s.empty? } %>" />
-<% end %>
 <div class="main">
   <div class="container">
     <main>

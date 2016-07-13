@@ -20,3 +20,36 @@
 @import 'owl.transitions';
 @import 'styles';
 
+#meta-form {
+	margin-top: -25px;
+	z-index: 100;
+	& input, textarea {
+		color: #000;
+		width: 250px;
+		margin: 2px;
+	}
+	label {
+		width: 75px;		
+	}
+}
+
+#show-meta-form {	
+	margin-left: 20px;
+	position:absolute;
+	display:block;
+}
+
+.edit-sym {
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.page-data {
+	padding: 10px;
+	& .btn {
+		margin-top: 5px;
+	}
+}
+
+
+

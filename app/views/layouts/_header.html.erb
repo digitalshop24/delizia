@@ -1,4 +1,21 @@
 <header class="header">
+  <% if current_admin_user %>
+    <span id="show-meta-form" class="edit-sym">&#x2710;</span>
+    <div style="display:none; margin-left: 55px; position:absolute;" id="meta-form">
+        <%= form_for @page, method: :put do |f| %>
+          <p>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+          </p>
+          <p>
+            <%= f.label :description %>
+            <%= f.text_area :description, rows: 4 %>
+          </p>
+          <%= f.submit 'Сохранить', class: 'pull-right' %>
+        <% end %>
+      </div>
+    <script>$("#show-meta-form").click(function(){$("#meta-form").toggle();});</script>
+  <% end %>
   <div class="search hidden-xs">
     <%= form_tag search_path, method: :get do %>
       <%= text_field_tag :query, nil, placeholder: 'Поиск' %>

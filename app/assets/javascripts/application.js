@@ -64,6 +64,10 @@ $(document).ready(function () {
         });
 
     });
+    $('.page-data span.edit-sym').click(function(){
+        $(this).parent().children('.page-text-form').toggle();
+        $(this).parent().children('.page-info-text').toggle();
+    });
 });
 
 function func() {

@@ -7,4 +7,12 @@ class News < ActiveRecord::Base
 	def self.recent number=3
 		order(created_at: :desc).limit(number)
 	end
+
+	def get_title
+		[self.title, self.head].find{ |i| i.present? }
+	end
+
+	def get_description
+		[self.description, self.short, self.middle, self.full].find{ |i| i.present? }
+	end
 end

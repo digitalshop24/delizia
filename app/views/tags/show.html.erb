@@ -1,9 +1,4 @@
 <% content_for :meta do %>
-  <title><%= [@tag.title, @tag.name, @tag.url].find{ |i| !i.to_s.empty? } %></title>
-  <% desc = [@tag.description, @tag.text].find{ |i| !i.to_s.empty? } %>
-  <% if desc.present? %>
-    <meta name="description" content="<%= desc %>">
-  <% end %>
   <% if @tag.keywords.present? %>
     <meta name="keywords" content="<%= @tag.keywords %>">
   <% end %>
@@ -18,12 +13,11 @@
           <%= render partial: 'catalog/filter_form', locals: { remote: false } %>
         </div>
         <div class="col-md-9">
+          <%= render partial: 'pages/info_text', locals: { field: :top_text } %>          
           <div class="goods row">
             <%= render @tag.collections %>
           </div>
-          <div class="text-left">
-            <%= @tag.text %>
-          </div>
+          <%= render partial: 'pages/info_text', locals: { field: :bottom_text } %>     
         </div>
       </div>
       <!-- =/goods -->

@@ -14,15 +14,12 @@ Rails.application.routes.draw do
 
   get 'search', to: 'catalog#search', as: :search
   post 'catalog/filter', to: 'catalog#index', as: :filter
+  get 'catalog/:url', to: 'tags#show'
   resources :catalog
   resources :factory
+  resources :pages, only: [:update]
   resources :news, only: [:index, :show]
   resources :entries, only: :create
-  resources :tags, only: [:index] do
-    collection do
-      get ':url', to: 'tags#show'
-    end
-  end
 
   get 'stat', to: 'home#stat', as: :stat
 end

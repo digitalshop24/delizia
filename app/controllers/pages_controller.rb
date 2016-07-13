@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  def update
+    page = Page.find(params[:id])
+    page.update(page_params)
+    redirect_to :back
+  end
   def about
     @news = News.recent
     @page = Page.find_by_key('about')
@@ -13,5 +18,10 @@ class PagesController < ApplicationController
   def dealers
     @page = Page.find_by_key('dealers')
     render :page
+  end
+
+  private
+  def page_params
+    params[:page].permit(:title, :description, :top_text, :bottom_text)
   end
 end

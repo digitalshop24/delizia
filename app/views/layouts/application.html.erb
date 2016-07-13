@@ -3,7 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name='yandex-verification' content='6bb0dc226cf7c9e9' />
-    <%= yield :meta %>
+    <title><%= @title || "Delizia - салон итальянской плитки" %></title>
+    <% if @description.present? %><meta name="desription" content="<%= @description %>" /><% end %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="/favicon.ico" type="image/x-icon"/>

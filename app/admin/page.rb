@@ -3,6 +3,12 @@ ActiveAdmin.register Page do
   permit_params :name, :subname, :content, :image, :title, :description
   actions :all, except: [:new, :destroy]
 
+  controller do
+    def scoped_collection
+      super.where.not(name: nil)
+    end
+  end
+
   index do
     selectable_column
     column :name

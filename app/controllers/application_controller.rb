@@ -3,7 +3,29 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   def set_admin_locale
-	    I18n.locale = :ru
+    I18n.locale = :ru
+  end
+
+  def render *args
+    set_metas unless controller_path.split('/').first == 'admin'
+    super
+  end
+
+  def set_metas
+    path = request.path[1..-1]
+    path += "?#{request.query_string}" if request.query_string.present?
+    @page = Page.where(key: path).first_or_create
+    @title = meta :title
+    @description = meta :description
+  end
+
+  def meta name
+    name = name.to_sym
+    arr = [@page.send(name)]
+    obj = @good || @news || @tag
+    meth = "get_#{name}".to_sym
+    arr << obj.send(meth) if obj && obj.respond_to?(meth)
+    arr.find{ |i| i.present? }
   end
 
   def set_all

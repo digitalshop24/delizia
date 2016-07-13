@@ -21,4 +21,12 @@ class Collection < ActiveRecord::Base
       images.first.as_preview(self) if (images && images.first)
     end
   end
+
+  def get_title
+    [self.title, self.name].find{|i| !i.to_s.empty? }
+  end
+
+  def get_description
+    [self.description, self.content].find{|i| !i.to_s.empty? }
+  end
 end
