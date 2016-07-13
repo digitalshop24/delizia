@@ -14,7 +14,7 @@
           <%= f.submit 'Сохранить', class: 'pull-right' %>
         <% end %>
       </div>
-    <script>$("#show-meta-form").click(function(){$("#meta-form").toggle();});</script>
+    <script>$("#show-meta-form").on('click touchstart', function(){$("#meta-form").toggle();});</script>
   <% end %>
   <div class="search hidden-xs">
     <%= form_tag search_path, method: :get do %>

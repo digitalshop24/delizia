@@ -64,7 +64,7 @@ $(document).ready(function () {
         });
 
     });
-    $('.page-data span.edit-sym').click(function(){
+    $('.page-data span.edit-sym').on('click touchstart', function(){
         $(this).parent().children('.page-text-form').toggle();
         $(this).parent().children('.page-info-text').toggle();
     });
