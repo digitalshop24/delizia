@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   get 'search', to: 'catalog#search', as: :search
   post 'catalog/filter', to: 'catalog#index', as: :filter
-  get 'catalog/:url', to: 'tags#show'
+  get 'catalog/tags/:url', to: 'tags#show'
   resources :catalog
   resources :factory
   resources :pages, only: [:update]
