@@ -1,0 +1,16 @@
+<%= form_for @menu_item, remote: true do |f| %>
+  <%= f.hidden_field :parent_id %>
+  <%= f.hidden_field :position %>
+  <div class="form-group">
+    <%= f.text_field :text, autofocus: true, placeholder: 'Текст ссылки', class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :url, placeholder: 'URL', class: "form-control", required: true %>
+  </div>
+  <div class="form-group">
+    <%= f.number_field :priority, placeholder: 'Приоритет', class: "form-control" %>
+  </div>
+  <div class="text-center">
+    <%= f.submit 'Сохранить', class: "btn" %>
+  </div>
+<% end %>

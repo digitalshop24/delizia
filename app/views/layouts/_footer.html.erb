@@ -2,14 +2,8 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="menu-1 col-md-2 col-sm-6 col-xs-12">
-				<ul>
-          <li><%= link_to Page.about.name, about_path %></li>					
-          <li><%= link_to Page.delivery.name, delivery_path %></li>					
-					<li><%= link_to 'Новости', news_index_path %></li>
-          <li><%= link_to Page.dealers.name, dealers_path %></li>					
-					<li><%= link_to 'Контакты', contacts_path %></li>
-				</ul>
+			<div class="menu-1 col-md-2 col-sm-6 col-xs-12 rendered_menu_bottom_left">				
+					<%= render partial: 'menu_items/index/bottom_left', locals: { menu_items: @menu_items['bottom_left'] } %>
 			</div>
 			<div class="menu-2 menu_3 col-md-5 col-sm-6 col-xs-12">
 			  <ul>
@@ -23,13 +17,8 @@
 					<% end %>					
 				</ul>
 			</div>
-			<div class="menu-2 col-md-2 col-sm-6 col-xs-12">
-			  <ul>
-			  		<li><%= link_to 'Каталог', catalog_index_path, class: 'title' %>
-			  		<% Type.all.each do |type| %>
-						<li><%= link_to type.name, catalog_index_path(types: type.id) %></li>
-					<% end %>
-				</ul>
+			<div class="menu-2 col-md-2 col-sm-6 col-xs-12 rendered_menu_bottom_right">
+				<%= render partial: 'menu_items/index/bottom_right', locals: { menu_items: @menu_items['bottom_right'] } %>
 			</div>
 			<div class="contacts col-md-3 col-sm-6 col-xs-12 pull-right">
 				<p><img src="<%= asset_path "tel.png" %>" alt="" width="13" height="13" class="viber" /><a href="tel:+375172788866" title="">+375 (17) 27 888 66</a></p>
@@ -53,4 +42,5 @@
 		</div>
 	</div>
 </footer>
+<%= render 'menu_items/modal' if current_admin_user %>
 <!-- =/footer -->

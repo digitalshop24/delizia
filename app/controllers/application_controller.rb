@@ -7,7 +7,14 @@ class ApplicationController < ActionController::Base
   end
 
   def render *args
-    set_metas unless controller_path.split('/').first == 'admin'
+    unless controller_path.split('/').first == 'admin'
+      set_metas
+      positions = MenuItem.pluck(:position).uniq
+      @menu_items = {}
+      positions.each do |pos|
+        @menu_items[pos] = MenuItem.root.where(position: pos)
+      end
+    end
     super
   end
 
@@ -17,6 +24,7 @@ class ApplicationController < ActionController::Base
     @page = Page.where(key: path).first_or_create
     @title = meta :title
     @description = meta :description
+    @keywords = meta :keywords
   end
 
   def meta name

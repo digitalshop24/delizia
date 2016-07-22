@@ -1,0 +1,2 @@
+<% pos = @menu_item.position %>
+$(".rendered_menu_<%= pos %>").html('<%= j render(partial: "menu_items/index/#{pos}", locals: { menu_items: @menu_items[pos]}) %>');
