@@ -190,11 +190,21 @@ footer {
 	margin-left: -0.1rem;
 }
 
-.header .navbar li a{
+.header .navbar li a {
 	text-decoration: none;
-	padding: 0.5rem 1.5rem;
-	
+  padding: 0.5rem 1.5rem;
+  &.menu_button {
+    padding: 0;
+    font-size: 20px;
+    &:last-of-type {
+      padding-right: 0.5rem;
+    }
+  }
+  &.menu_add_button {
+    font-size: 20px;
+  }  
 }
+
 .header .navbar li .left_border{
 	border-right: 1px solid #DFD8D0;
 }

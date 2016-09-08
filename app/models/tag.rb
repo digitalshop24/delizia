@@ -10,4 +10,8 @@ class Tag < ActiveRecord::Base
   def get_description
   	[self.description, self.text].find{ |i| i.present? }
   end
+
+  def get_keywords
+    self.keywords
+  end
 end

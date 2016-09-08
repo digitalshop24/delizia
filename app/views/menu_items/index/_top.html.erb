@@ -1,0 +1,34 @@
+<ul>
+  <% if menu_items %>
+    <% menu_items.each do |mi| %>
+      <li id="menu_item_<%=mi.id%>">
+        <%= link_to mi.text, mi.url %>
+        <% if current_admin_user %>
+          <%= link_to '<span>&#x2710;</span>'.html_safe, '#menu_link', 'data-toggle' => 'modal', class: 'menu_edit_button menu_button', 'data-url' => edit_menu_item_path(mi.id) %>
+          <%= link_to '<span>&#x2715;</span>'.html_safe, menu_item_path(mi), method: :delete, class: 'menu_button', data: { confirm: 'Вы уверены?' }, remote: true %>
+        <% end %>
+        <% if mi.children.present? || current_admin_user %>
+          <div class="podmenu" >
+            <ul>
+              <% mi.children.each do |cmi| %>
+                <li id="menu_item_<%=cmi.id%>">
+                  <%= link_to cmi.text, cmi.url %>
+                  <% if current_admin_user %>
+                    <%= link_to '<span>&#x2710;</span>'.html_safe, '#menu_link', 'data-toggle' => 'modal', class: 'menu_edit_button menu_button', 'data-url' => edit_menu_item_path(cmi.id) %>
+                    <%= link_to '<span>&#x2715;</span>'.html_safe, menu_item_path(cmi), method: :delete, class: 'menu_button', data: { confirm: 'Вы уверены?' }, remote: true %>
+                  <% end %>
+                </li>
+              <% end %>
+              <% if current_admin_user %>
+                <li><%= link_to '+', '#menu_link', 'data-toggle' => 'modal', class: 'menu_add_button menu_edit_button', 'data-url' => new_menu_item_path(parent_id: mi.id, position: 'top') %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  <% end %>
+  <% if current_admin_user %>
+    <li><%= link_to '+', '#menu_link', 'data-toggle' => 'modal', class: 'menu_add_button menu_edit_button', 'data-url' => new_menu_item_path(position: 'top') %></li>
+  <% end %>
+</ul>

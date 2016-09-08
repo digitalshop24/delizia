@@ -68,6 +68,14 @@ $(document).ready(function () {
         $(this).parent().children('.page-text-form').toggle();
         $(this).parent().children('.page-info-text').toggle();
     });
+
+    $(document).on('click touchstart', '.menu_edit_button', function(){
+        $.get($(this).data('url'));
+    });
+
+    $('#menu_link').submit('form', function(){
+        $("#menu_link").modal('hide');
+    });
 });
 
 function func() {

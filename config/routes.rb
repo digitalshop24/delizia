@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :catalog
   resources :factory
   resources :pages, only: [:update]
+  resources :menu_items, only: [:create, :destroy, :update, :edit, :new]
   resources :news, only: [:index, :show]
   resources :entries, only: :create
 
