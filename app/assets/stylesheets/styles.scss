@@ -278,3 +278,36 @@ div.goods div.record{
 a, input {
 	outline: none !important;
 }
+
+.consultation {
+	max-height:350px;
+	background-position:right;
+	background-size:60%;
+
+	.form {
+		height:350px;
+		min-height:350px;
+		width:40%;
+		padding:0 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		p {
+			font-size:26px;
+			padding-bottom:1rem;
+		}
+	}
+}
+
+.ya-share2{
+	margin-top: 20px;
+	text-align: center;
+}
+
+.page_title {
+	font-size:30px;
+	font-size:3rem;
+	font-weight:bold;
+	text-align: center;
+}

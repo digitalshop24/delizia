@@ -21,7 +21,8 @@ class ApplicationController < ActionController::Base
 
   def meta name
     name = name.to_sym
-    arr = [@page.send(name)]
+    arr = []
+    arr << @page.send(name) if @page.respond_to?(name)
     obj = @good || @news || @tag
     meth = "get_#{name}".to_sym
     arr << obj.send(meth) if obj && obj.respond_to?(meth)

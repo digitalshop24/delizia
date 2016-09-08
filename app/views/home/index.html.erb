@@ -18,17 +18,6 @@
 <!-- =/owl -->
 <!-- популятрые коллекции -->
 <!-- owl брэндов -->
-<div class="owl-carousel owl-theme" id="foo3">
-  <% Factory.all.each do |factory| %>
-    <% if factory.logo_file_name %>
-      <div class="text-center">
-        <%= link_to catalog_index_path(factories: factory.id) do %>
-          <%= image_tag factory.logo.url(:medium), width: 205 %>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 <div class="container new_block">
   <div class="row">
     <% @news.each do |n| %>
@@ -42,6 +31,9 @@
       </div>
     <% end %>
   </div>
+</div>
+<div class="container text-center">
+  <%= render partial: 'pages/info_text', locals: { field: :top_text } %>
 </div>
 <div class="container consultation-cat">
   <section class="consultation">
@@ -57,7 +49,18 @@
       <% end %>
     </div>
   </section>
-  <div class="text-center">
-    <%= render partial: 'pages/info_text', locals: { field: :bottom_text } %>
-  </div>   
+</div>
+<div class="owl-carousel owl-theme" id="foo3">
+  <% Factory.all.each do |factory| %>
+    <% if factory.logo_file_name %>
+      <div class="text-center">
+        <%= link_to catalog_index_path(factories: factory.id) do %>
+          <%= image_tag factory.logo.url(:medium), width: 205 %>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<div class="container text-center">
+  <%= render partial: 'pages/info_text', locals: { field: :bottom_text } %>
 </div>

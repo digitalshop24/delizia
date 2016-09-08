@@ -19,6 +19,7 @@
               <% end %>
             </div>
           <% end %>
+          <div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter,viber,whatsapp,skype,telegram"></div>
         </div>
         <div class="detail-text col-md-5 col-md-offset-1 col-sm-6 col-sm-offset-0 col-xs-12">
           <table class="detail">
@@ -49,7 +50,7 @@
             </tr>
           </table>
           <div class="text" style="word-wrap: break-word;">
-            <p><%=@good.content %></p>
+            <p><%=@good.content.to_s.html_safe %></p>
           </div>
         </div>
       </div>

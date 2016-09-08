@@ -5,7 +5,7 @@
         <% if @page.name %>
           <h1 class="justifycenter"><%= @page.name %></h1>
         <% end %>
-        <div class="col-md-7">
+        <div class="col-md-12">
           <% if @page.subname %>
             <h3><%= @page.subname %></h3>
             <br>
@@ -13,66 +13,6 @@
           <% if @page.content %>
             <p><%= @page.content.split(/\r\n/).join('</p><br><p>').html_safe %></p>
           <% end %>
-        </div>
-        <div class="col-md-5 text-center">
-          <div class="owl-carousel owl-theme" id="foo4">
-            <div class="text-center">
-              <%= link_to asset_path('about/1.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/1.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/2.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/2.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/3.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/3.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/16.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/16.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/5.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/5.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/6.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/6.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/7.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/7.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/8.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/8.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/9.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/9.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/10.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/10.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/11.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/11.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/12.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/12.jpg' %></p>
-              <% end %>
-            </div>
-            <div class="text-center">
-              <%= link_to asset_path('about/13.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/13.jpg' %></p>
-              <% end %>
-              <%= link_to asset_path('about/14.jpg'), class: 'gallery2', rel: 'group2' do %>
-                <p><%= image_tag 'about/14.jpg' %></p>
-              <% end %>
-            </div>
-          </div>
         </div>
       </div>
     </main>
