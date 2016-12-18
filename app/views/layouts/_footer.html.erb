@@ -2,7 +2,7 @@
 <footer>
 	<div class="container">
 		<div class="row">
-			<div class="menu-1 col-md-2 col-sm-6 col-xs-12 rendered_menu_bottom_left">				
+			<div class="menu-1 col-md-2 col-sm-6 col-xs-12 rendered_menu_bottom_left">
 					<%= render partial: 'menu_items/index/bottom_left', locals: { menu_items: @menu_items['bottom_left'] } %>
 			</div>
 			<div class="menu-2 menu_3 col-md-5 col-sm-6 col-xs-12">
@@ -14,7 +14,7 @@
 						<p class="footer_new_left"><%= news.created_at.strftime('%d.%m.%Y') %></p>
 						<p class="text-right"><%= link_to 'Читать дальше', news_path(news), class: 'footer_new_right' %></p>
 					</li>
-					<% end %>					
+					<% end %>
 				</ul>
 			</div>
 			<div class="menu-2 col-md-2 col-sm-6 col-xs-12 rendered_menu_bottom_right">
@@ -26,7 +26,7 @@
 				<p><img src="<%= asset_path "mts.png" %>" alt="" width="13" height="13" class="viber" /><a href="tel:+375295988866" title="">+375 (29) 59 888 66</a></p>
 				<p>станция метро «Восток»</p>
 				<p>г. Минск ул. Жасминовая, 3г</p>
-				<p>пн. - пт. 11:00 - 20:00</p>
+				<p>пн. - пт. 10:00 - 20:00</p>
 				<p>сб. 11:00 -  17:00</p>
 				<p>вс. выходной</p>
 				<p>
@@ -35,7 +35,7 @@
 				<p>
 					<img src="<%= asset_path "belkart.png" %>" alt="">
 					<img src="<%= asset_path "MasterCard.png" %>" alt="">
-					<img src="<%= asset_path "Visa.png" %>" alt="">					
+					<img src="<%= asset_path "Visa.png" %>" alt="">
 				</p>
 				<p>ООО «Фартужен» УНП 191759660</p>
 			</div>
