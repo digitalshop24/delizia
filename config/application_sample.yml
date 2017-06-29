@@ -1,0 +1,16 @@
+default: &default
+  app_name: delizia
+  host: localhost:3000
+  database_username: postgres
+  database_password: password
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
+  app_name: delizia
+  host: 'delizia.by'
+  database_username: deployer
+  database_password: database_password
+  SECRET_KEY_BASE: ac2fb242aea115b0697fd3e52430e3b6e63709cd6a6ba935d08f17df6e90c214cc3cbb19b0e15a290b459b921c9bc4fd6bbac55ec3dda27a4395db440efcfd54
