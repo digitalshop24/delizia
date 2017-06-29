@@ -30,7 +30,7 @@ namespace :server do
       within current_path do
         execute "cd #{current_path}"
         execute :bundle, "exec unicorn_rails -c #{current_path}/config/unicorn.rb -E #{rails_env}"
-      end      
+      end
     end
   end
 
@@ -43,7 +43,7 @@ namespace :server do
 
   desc "Stop the application by killing the Unicorn process"
   task :stop do
-    on roles(:all) do      
+    on roles(:all) do
       execute "kill $(cat #{deploy_to}/run/unicorn.pid)"
     end
   end
@@ -54,11 +54,11 @@ namespace :deploy do
   desc 'Setup'
   task :setup do
     on roles(:all) do
-      #execute "mkdir  #{shared_path}/config/"
-      #execute "mkdir  /var/www/apps/#{application}/run/"
-      #execute "mkdir  /var/www/apps/#{application}/log/"
-      #execute "mkdir  /var/www/apps/#{application}/socket/"
-      #execute "mkdir #{shared_path}/system"
+      execute "mkdir  #{shared_path}/config/"
+      execute "mkdir  /var/www/apps/#{application}/run/"
+      execute "mkdir  /var/www/apps/#{application}/log/"
+      execute "mkdir  /var/www/apps/#{application}/socket/"
+      execute "mkdir #{shared_path}/system"
 
       upload!('config/application.yml', "#{shared_path}/config/application.yml")
       within release_path do
@@ -72,8 +72,8 @@ namespace :deploy do
   desc 'Create symlink'
   task :symlink do
     on roles(:all) do
-      execute "ln -s #{shared_path}/system #{release_path}/public/system"
-     #execute "ln -s #{shared_path}/config/application.yml #{release_path}/config/application.yml"
+      execute "ln -s #{shared_path}/public/system #{release_path}/public/system"
+      execute "ln -s #{shared_path}/config/application.yml #{release_path}/config/application.yml"
     end
   end
 
